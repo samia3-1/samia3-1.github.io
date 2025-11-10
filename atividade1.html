@@ -6,7 +6,7 @@
     <label>Nome Completo: </label>
     <input type="text" id="txtNomeCompleto">
     
-    <button onClick="func01()">>></button>
+    <button onClick="separar()">>></button>
     
     <label>Nome:</label>
     <input type="text" id="txtNome">
@@ -16,8 +16,10 @@
     
   </form>
   <script>
-    function func01(){
-      alert('Clicou');
+    
+    function separar(){
+      const nomeCompleto = document.getElementById('txtNomeCompleto').value;
+      document.getElementById('txtNome').value = nomeCompleto
     }
   </script>
 </body>
