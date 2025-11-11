@@ -4,6 +4,11 @@
       body {
         background-color: #2E2E2E
       }
+
+      #mensagem {
+        display: none;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
@@ -17,8 +22,22 @@
       <input type="number" min='0' placeholder='Ex: 100.000' id='peso'>
       <button type="button" name='Calcular' id='calcular'>Calcular IMC</button>
       </div> 
+    <p id='mensagem'></p>
+
+    
   </form>
     <script>
+      let nome = document.getElementById('nome').value;
+      let altura = document.getElementById('altura').value;
+      let peso = document.getElementById('peso').value;
+
+      let imc = peso / (altura * altura);
+
+      function resultado(){
+      const paragrafo = document.getElementById("mensagem");
+        paragrafo.style.display = "block";
+        paragrafo.textContent = `${altura}`
+      }
       
     </script>
   </body>
