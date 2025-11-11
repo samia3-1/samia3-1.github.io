@@ -20,7 +20,7 @@
       <input type="number" min='0' placeholder='Ex: 1.30' id='altura'>
       <label>Digite o peso: </label>
       <input type="number" min='0' placeholder='Ex: 100.000' id='peso'>
-      <button type="button" name='Calcular' id='calcular'>Calcular IMC</button>
+      <button type="button" name='Calcular' id='calcular' onClick='resultado()'>Calcular IMC</button>
       </div> 
     <p id='mensagem'></p>
 
@@ -36,7 +36,7 @@
       function resultado(){
       const paragrafo = document.getElementById("mensagem");
         paragrafo.style.display = "block";
-        paragrafo.textContent = `${altura}`
+        paragrafo.textContent = ``
       }
       
     </script>
