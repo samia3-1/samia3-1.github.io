@@ -12,17 +12,20 @@
     <input type="text" id="txtNome">
     
     <label>Sobrenome:</label>
-    <input type="text" id="txtSobreNome">
+    <input type="text" id="txtSobrenome">
     
   </form>
   <script>
     
     function separar(){
       const nomeCompleto = document.getElementById('txtNomeCompleto').value;
-      document.getElementById('txtNome').value = nomeCompleto
-      let indiceEspaco = nome.indexOf(" ");
+      let indiceEspaco = nomeCompleto.indexOf(" ");
 
-      let primeiroNome = nome.substring(0, indiceEspaco)
+      let primeiroNome = nomeCompleto.substring(0, indiceEspaco)
+      document.getElementById("txtNome").value = primeiroNome;
+
+       let sobrenome = nomeCompleto.substring(indiceEspaco + 1)
+      document.getElementById("txtSobrenome").value = sobrenome;
     }
   </script>
 </body>
