@@ -22,8 +22,6 @@
       <input type="number" min='0' placeholder='Ex: 100.000' id='peso'>
       <button type="button" name='Calcular' id='calcular' onClick='resultado()'>Calcular IMC</button>
       </div> 
-    <input type='text' id='caixa'>
-
     
   </form>
     <script>
@@ -36,7 +34,7 @@
       function resultado(){
       const paragrafo = document.getElementById("mensagem");
         paragrafo.style.display = "block";
-        paragrafo.textContent = altura
+        paragrafo.textContent = (`Olá, ${nome}`)
       }
       
     </script>
