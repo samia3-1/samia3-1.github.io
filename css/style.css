@@ -1,10 +1,8 @@
 #direita {
-    position: fixed;
     bottom: 0;      
     right: 0; 
 }
-#direita {
-    position: fixed;
+#esquerda {
     bottom: 0;      
     left: 0; 
 }
