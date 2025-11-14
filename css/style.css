@@ -223,6 +223,7 @@ main {
 @media screen and (max-width: 1200px) {
     body { 
         font-size: 13px;
+        background-image: url('fundo.jpg');
     }
 
     main {
