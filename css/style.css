@@ -15,6 +15,7 @@ body {
     padding: 0;
     margin: 0;
     font-weight: 300;
+    background-image: url('fundo.jpg');
 }
 
 body, input {
@@ -231,6 +232,4 @@ main {
         height: 80vh;
         margin: 10vh auto;
     }
-} body {
- background-image: url('fundo.jpg');
-}
+} 
