@@ -1,13 +1,9 @@
-#direita {
+#trocar-cor {
     position: fixed;
     bottom: 0;      
     right: 0; 
 }
-#esquerda {
-    position: fixed;
-    bottom: 0;      
-    left: 0; 
-}
+
 :root {
     --main-cinza: #CCCCCC;
     --main-branco: #FFFFFF;
