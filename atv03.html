@@ -100,49 +100,30 @@
         </section>
     </main>
     <script>
-        // JavaScript
+        
 const personagem = document.getElementById('personagem');
 const botaoCor = document.getElementById('trocar-cor');
-
-// 1. Defina os caminhos das imagens em ordem.
-// ATENÇÃO: Verifique se estes caminhos estão corretos em relação à estrutura de pastas do seu projeto.
+        
 const CAMINHOS_IMAGENS = [
-    'img/robotron-amarelo.png',     // 0: A primeira imagem (Cor Azul)
-    'img/robotron-azul.png', // 1: A próxima imagem (Cor Vermelha)
-    'img/robotron-branco.png',    // 2: A próxima imagem (Cor Verde)
+    'img/robotron.png', 
+    'img/robotron-amarelo.png',
+    'img/robotron-branco.png',    
     'img/robotron-preto.png',
     'img/robotron-rosa.png',
-    'img/robotron-vermelho.png'// 3: A última imagem (Cor Amarela)
-    // Adicione mais caminhos de imagem se necessário
+    'img/robotron-vermelho.png'
 ];
 
-// 2. Variável de índice para acompanhar a imagem atual.
-// Se a imagem inicial do HTML (acima) NÃO for a primeira do array (índice 0),
-// ajuste este valor para o índice da imagem inicial.
 let indiceImagemAtual = 0; 
 
-
-// 3. Função para mudar a imagem
 function mudaImagem() {
-    // 3.1. Incrementa o índice
     indiceImagemAtual++;
-
-    // 3.2. Verifica o ciclo: Se atingir o fim, volta para 0.
-    // Usando o operador módulo (%) é a forma mais limpa de fazer o ciclo:
     indiceImagemAtual = indiceImagemAtual % CAMINHOS_IMAGENS.length;
-
-
-    // 3.3. Aplica o novo caminho (src) da imagem
     const novoCaminho = CAMINHOS_IMAGENS[indiceImagemAtual];
     
-    // **A MUDANÇA PRINCIPAL:** Troca o atributo 'src'
     personagem.src = novoCaminho;
     
-    // Opcional: Atualiza o texto alternativo (alt)
     personagem.alt = `Meu Robotron na cor ${indiceImagemAtual}`;
 }
-
-// 4. Adiciona um "ouvinte de evento" (event listener) ao botão
 botaoCor.addEventListener('click', mudaImagem);
     </script>
 </body>
