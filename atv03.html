@@ -95,36 +95,26 @@
                     </div>
                 </div>
                 <input type="submit" value="Iniciar produção" class="producao" id="producao">
-                <input type="button" value=">>>" id="trocar-cor" class="producao">
+                <input type="button" value=">>>" id="trocar-cor" class="producao" onClick="">
             </form>
         </section>
     </main>
     <script>
-        
+        function mudaImagem(){
 const personagem = document.getElementById('personagem');
 const botaoCor = document.getElementById('trocar-cor');
         
-const CAMINHOS_IMAGENS = [
-    'img/robotron.png', 
-    'img/robotron-amarelo.png',
-    'img/robotron-branco.png',    
-    'img/robotron-preto.png',
-    'img/robotron-rosa.png',
-    'img/robotron-vermelho.png'
-];
+const imagens = ['img/robotron.png','img/robotron-amarelo.png''img/robotron-branco.png','img/robotron-preto.png','img/robotron-rosa.png','img/robotron-vermelho.png'];
 
-let indiceImagemAtual = 0; 
+let imagemAtual = 0; 
 
-function mudaImagem() {
-    indiceImagemAtual++;
-    indiceImagemAtual = indiceImagemAtual % CAMINHOS_IMAGENS.length;
-    const novoCaminho = CAMINHOS_IMAGENS[indiceImagemAtual];
+    imagemAtual++;
+    imagemAtual = imagemAtual % imagens.length;
+    const novoCaminho = imagens[indiceImagemAtual];
     
     personagem.src = novoCaminho;
     
-    personagem.alt = `Meu Robotron na cor ${indiceImagemAtual}`;
-}
-botaoCor.addEventListener('click', mudaImagem);
+ }   
     </script>
 </body>
 </html>
