@@ -105,16 +105,17 @@ const personagem = document.getElementById('personagem');
 const botaoCor = document.getElementById('trocar-cor');
         
 const imagens = ['img/robotron.png','img/robotron-amarelo.png','img/robotron-branco.png','img/robotron-preto.png','img/robotron-rosa.png','img/robotron-vermelho.png'];
-        
-   function mudaImagem(){
        
 let imagemAtual = 0; 
-
+        
+ function mudaImagem(){
     imagemAtual++;
+       
     imagemAtual = imagemAtual % imagens.length;
     const novoCaminho = imagens[imagemAtual];
     
     personagem.src = novoCaminho;
+       
  }   
         botaoCor.addEventListener('click', mudaImagem);
     </script>
