@@ -4,12 +4,14 @@
     <link rel="stylesheet" href="atv05.css">
   </head>
   <body>
-    <div class='formBase'>
+  <div class='formBase'>
+      
     <h1>Escola Virtual</h1>
     <h2>Formulário Pré-Matrícula</h2>
     <form>
       <fieldset class='caixatxt'>
-      <legend>Dados Pessoais: </legend>
+  <div>
+       <legend>Dados Pessoais: </legend>
       <br><label>Nome do Aluno: </label> <input type='text'>
      
        <br><label >Nascimento (dd/mm/aaaa): </label><p id='data-nasc'></p>
@@ -22,8 +24,11 @@
       <br><label>E-Mail: </label> <input type='email'>
       <span id="mensagemErro" style="color: red; display: none;">Por favor, insira um e-mail válido.</span>
       </fieldset>
+  </div>
+    
       <fieldset class='caixatxt'>
           <legend>Informações de Matrícula: </legend>
+  <div>
         <br><label>Série: </label>
         <select>
             <option selected>Pré-escolar</option>
@@ -31,10 +36,15 @@
             <option >2° Fundamental</option>
             <option >Ensino Médio</option>
         </select>
+       </div>
+        
+  <div>
          <br><label>Turno: </label>
       <br><input type='radio'><label>Matutino</label>
       <br><input type='radio'><label>Vespertino</label>
+        </div>
         
+  <div>
         <br><label>Atividades Extracurriculares: </label>
         <br><input type='checkbox'><label>Informática</label>
       <br><input type='checkbox'><label>Música</label>
@@ -42,11 +52,12 @@
         <br><input type='checkbox'><label>Pintura</label>
         <br><input type='checkbox'><label>Judô</label>
         <br><input type='checkbox'><label>Futebol</label>
+  </div>
       
       <br><input type='button' value='Envia Formulário'> <input type='button' value='Limpar Formulário'>
 </fieldset>
     </form>
-  </div>
+ </div>
 
     <script>
       function data_Nascimento() {
