@@ -21,7 +21,7 @@
        <br><label>Nome do Pai: </label> <input type='text'>
       
        <br><label>Telefone: DDD </label> <input type='text'>
-      <br><label>E-Mail: </label> <input type='email'>
+      <br><label>E-Mail: </label> <input type='email' id='email>
       <span id="mensagemErro" style="color: red; display: none;">Por favor, insira um e-mail válido.</span>
       </fieldset>
   </div>
@@ -60,6 +60,15 @@
  </div>
 
     <script>
+      const mensagemErro = document.getElementById('mensagemErro');
+      const email = document.getElementById('email).value;
+      const campoEmail = document.getElementById('email');                                     
+                                            
+       if ( !email.includes('@')){
+        mensagemErro.style.display = 'inline';
+        campoEmail.style.borderColor = 'red';
+       }                                     
+                                            
       function data_Nascimento() {
       const data = new Date();
       const dia = data.getDate().toString().padStart(2, '0');
