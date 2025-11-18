@@ -1,3 +1,8 @@
 .caixatxt {
     width: 50%;
 }
+.container {
+    /* Define a largura do container, o fieldset se adaptará a isso */
+    width: 500px; 
+    border: 1px solid blue;
+}
