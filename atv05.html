@@ -12,7 +12,7 @@
       <legend>Dados Pessoais: </legend>
       <br><label>Nome do Aluno: </label> <input type='text'>
      
-       <br><label>Nascimento (dd/mm/aaaa): </label> <input type='text'>/<input type='text'>/<input type='text'>
+       <br><label >Nascimento (dd/mm/aaaa): </label><p id='data-nasc'></p>
     
        <br><label>Nome da Mãe: </label> <input type='text'>
       
@@ -49,7 +49,15 @@
   </div>
 
     <script>
-      
+      function data_Nascimento() {
+      const data = new Date();
+      const dia = data.getDate().toString().padStart(2, '0');
+      const mes = (data.getMonth() + 1).toString().padStart(2, '0'); // getMonth() é baseado em 0
+      const ano = data.getFullYear();
+
+      return `${dia}/${mes}/${ano}`;
+    }
+      document.getElementById('data-nasc').textContent = formatarDataParaDDMMYYYY();
     </script>
   </body>
 </html>
