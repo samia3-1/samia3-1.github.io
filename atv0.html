@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>Formulário</title>
+    <link rel="stylesheet" href="atv05.css">
+  </head>
+  <body>
+  <div class='div-pai'>
+      
+    <h1>Escola Virtual</h1>
+    <h2>Formulário Pré-Matrícula</h2>
+    <form>
+      <fieldset class='caixatxt'>
+  <div id='info-pessoais' >
+       <legend>Dados Pessoais: </legend>
+      <br><label>Nome do Aluno: </label> <input type='text'>
+     
+       <br><label >Nascimento (dd/mm/aaaa): </label><p id='data-nasc'></p>
+    
+       <br><label>Nome da Mãe: </label> <input type='text'>
+      
+       <br><label>Nome do Pai: </label> <input type='text'>
+      
+       <br><label>Telefone: DDD </label> <input type='text'>
+      <br><label>E-Mail: </label> <input type='email' id='email>
+      <span id="mensagemErro" style="color: red; display: none;">Por favor, insira um e-mail válido.</span>
+      </fieldset>
+  </div>
+    
+      <fieldset class='caixatxt'>
+          <legend>Informações de Matrícula: </legend>
+  <div id='serie' class='info-matricula'>
+        <br><label>Série: </label>
+        <select>
+            <option selected>Pré-escolar</option>
+            <option>1° Fundamental</option>
+            <option >2° Fundamental</option>
+            <option >Ensino Médio</option>
+        </select>
+       </div>
+        
+  <div id='turno' class='info-matricula'>
+         <br><label>Turno: </label>
+      <br><input type='radio'><label>Matutino</label>
+      <br><input type='radio'><label>Vespertino</label>
+        </div>
+        
+  <div id='atividades' id='info-matricula'>
+        <br><label>Atividades Extracurriculares: </label>
+        <br><input type='checkbox'><label>Informática</label>
+      <br><input type='checkbox'><label>Música</label>
+        <br><input type='checkbox'><label>Balet</label>
+        <br><input type='checkbox'><label>Pintura</label>
+        <br><input type='checkbox'><label>Judo</label>
+        <br><input type='checkbox'><label>Futebol</label>
+  </div>
+      
+      <br><input type='button' value='Envia Formulário'> <input type='button' value='Limpar Formulário'>
+    
+</fieldset>
+      
+    </form>
+ </div>
+
+    <script>
+      const mensagemErro = document.getElementById('mensagemErro');
+      const email = document.getElementById('email).value;
+      const campoEmail = document.getElementById('email');                                     
+                                            
+       if ( !email.includes('@')){
+        mensagemErro.style.display = 'inline';
+        campoEmail.style.borderColor = 'red';
+       }                                     
+                                            
+      function data_Nascimento() {
+      const data = new Date();
+      const dia = data.getDate().toString().padStart(2, '0');
+      const mes = (data.getMonth() + 1).toString().padStart(2, '0'); // getMonth() é baseado em 0
+      const ano = data.getFullYear();
+
+      return `${dia}/${mes}/${ano}`;
+    }
+      document.getElementById('data-nasc').textContent = data_Nascimento();
+    </script>
+  </body>
+</html>
