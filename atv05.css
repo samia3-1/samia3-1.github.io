@@ -1,7 +1,8 @@
 .formBase {
     display: flex;
-  justify-content: center;
+    justify-content: center;
     padding: 20px;
+    bottom: 50px
 }
 .caixatxt {
     
