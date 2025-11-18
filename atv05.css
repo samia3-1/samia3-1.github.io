@@ -1,7 +1,5 @@
 .formBase {
     /* Define a largura do container, o fieldset se adaptará a isso */
-    width: 550px; 
-    border: 1px solid;
     position: center;
 }
 .caixatxt {
