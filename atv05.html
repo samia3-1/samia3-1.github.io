@@ -62,24 +62,8 @@
  </div>
 
     <script>
-      const mensagemErro = document.getElementById('mensagemErro');
-      const email = document.getElementById('email).value;
-      const campoEmail = document.getElementById('email');                                     
-                                            
-       if ( !email.includes('@')){
-        mensagemErro.style.display = 'inline';
-        campoEmail.style.borderColor = 'red';
-       }                                     
-                                            
-      function data_Nascimento() {
-      const data = new Date();
-      const dia = data.getDate().toString().padStart(2, '0');
-      const mes = (data.getMonth() + 1).toString().padStart(2, '0'); // getMonth() é baseado em 0
-      const ano = data.getFullYear();
-
-      return `${dia}/${mes}/${ano}`;
-    }
-      document.getElementById('data-nasc').textContent = data_Nascimento();
+      
+     
     </script>
   </body>
 </html>
