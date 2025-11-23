@@ -4,7 +4,7 @@
   </head>
   <body>
      <br><label for='categoria'>Categoria: </label>
-        <select>
+        <select id='selecionar-categoria'>
             <option selected>Mercado</option>
             <option>Transporte</option>
             <option >Aluguel</option>
@@ -30,35 +30,62 @@
     </table>
 
     <script>
-      let categoria = document.
+      let categoria = document.getElementById('selecionar-categoria').value;
       let valor = document.getElementById('valor').value;
       let data = document.getElementById('data').value;
       
 function adicionarLinha() {
-  // 1. Obter a tabela e o corpo da tabela (<tbody>)
-  const tabela = document.getElementById("minhaTabela");
-  const corpoTabela = tabela.getElementsByTagName("tbody")[0];
+ // 1. CAPTURAR OS VALORES ATUAIS DOS ELEMENTOS
+    // Se o elemento for um <select>, .value retorna a opção selecionada.
+    let categoria = document.getElementById('categoria-select').value; 
+    let valor = document.getElementById('valor').value;
+    let data = document.getElementById('data').value;
+    
+    // Validação simples: evita adicionar linhas vazias
+    if (!categoria || categoria === "" || !valor || !data) {
+        alert("Por favor, preencha Categoria, Valor e Data antes de adicionar.");
+        return; 
+    }
 
-  // 2. Criar a nova linha
-  const novaLinha = document.createElement("tr");
+    // 2. OBTER A REFERÊNCIA DO CORPO DA TABELA
+    // Assumimos que o <tbody> é o primeiro (índice 0) elemento <tbody> na tabela.
+    const tabela = document.getElementById("minhaTabela");
+    const corpoTabela = tabela.getElementsByTagName("tbody")[0];
 
-  // 3. Criar as células
-  const novaCelula1 = document.createElement("td");
-  const novaCelula2 = document.createElement("td");
+    // 3. CRIAR E PREENCHER A NOVA LINHA
+    const novaLinha = document.createElement("tr");
 
-  // 4. Adicionar conteúdo às células
-  novaCelula1.textContent = valor;
-  novaCelula2.textContent = data;
+    // Cria 3 células <td>
+    const celulaCategoria = document.createElement("td");
+    const celulaValor = document.createElement("td");
+    const celulaData = document.createElement("td");
 
-  // 5. Adicionar as células à linha
-  novaLinha.appendChild(novaCelula1);
-  novaLinha.appendChild(novaCelula2);
+    // Adiciona o conteúdo capturado às células
+    celulaCategoria.textContent = categoria;
+    
+    // Opcional: formata o valor como moeda brasileira
+    celulaValor.textContent = parseFloat(valor).toLocaleString('pt-BR', { 
+        style: 'currency', 
+        currency: 'BRL' 
+    });
+    
+    // Opcional: formata a data para dd/mm/aaaa
+    const [ano, mes, dia] = data.split('-');
+    celulaData.textContent = `${dia}/${mes}/${ano}`;
 
-  // 6. Adicionar a nova linha ao corpo da tabela
-  corpoTabela.appendChild(novaLinha);
+    // 4. ADICIONAR AS CÉLULAS À LINHA
+    novaLinha.appendChild(celulaCategoria);
+    novaLinha.appendChild(celulaValor);
+    novaLinha.appendChild(celulaData);
+
+    // 5. ADICIONAR A LINHA AO CORPO DA TABELA
+    corpoTabela.appendChild(novaLinha);
+
+    // 6. LIMPAR OS CAMPOS APÓS ADICIONAR (Melhora a usabilidade)
+    document.getElementById('categoria-select').value = "";
+    document.getElementById('valor').value = "";
+    document.getElementById('data').value = "";
 }
 </script>
-
-    
   </body>
 </html>
