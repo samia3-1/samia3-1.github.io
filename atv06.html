@@ -16,7 +16,49 @@
     <input type='number' id='valor'>
     <label for='data'>Data: </label>
     <input type='date' id='data'>
-    <input type='button' value='Adicionar'>
+    
+    <input type='button' value='Adicionar' onclick="adicionarLinha()" id='botao-tabela'>
     <input type='button' value='Calcular'>
+
+    <table id='minhaTabela>
+      <thead>
+        
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+
+    <script>
+      let categoria = document.
+      let valor = document.getElementById('valor').value;
+      let data = document.getElementById('data').value;
+      
+function adicionarLinha() {
+  // 1. Obter a tabela e o corpo da tabela (<tbody>)
+  const tabela = document.getElementById("minhaTabela");
+  const corpoTabela = tabela.getElementsByTagName("tbody")[0];
+
+  // 2. Criar a nova linha
+  const novaLinha = document.createElement("tr");
+
+  // 3. Criar as células
+  const novaCelula1 = document.createElement("td");
+  const novaCelula2 = document.createElement("td");
+
+  // 4. Adicionar conteúdo às células
+  novaCelula1.textContent = valor;
+  novaCelula2.textContent = data;
+
+  // 5. Adicionar as células à linha
+  novaLinha.appendChild(novaCelula1);
+  novaLinha.appendChild(novaCelula2);
+
+  // 6. Adicionar a nova linha ao corpo da tabela
+  corpoTabela.appendChild(novaLinha);
+}
+</script>
+
+    
   </body>
 </html>
