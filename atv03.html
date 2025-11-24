@@ -111,9 +111,8 @@ let imagemAtual = 0;
  function mudaImagem(){
     imagemAtual++;
        
-    if( imagemAtual >= imagens.length;) {
-        imagemAtual = 0;
-    }
+    imagemAtual = imagemAtual % imagens.length;) 
+        
     const novoCaminho = imagens[imagemAtual];
     personagem.src = novoCaminho;
        
