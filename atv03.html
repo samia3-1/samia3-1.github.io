@@ -106,12 +106,11 @@ const botaoCor = document.getElementById('trocar-cor');
         
 const imagens = ['img/robotron.png','img/robotron-amarelo.png','img/robotron-branco.png','img/robotron-preto.png','img/robotron-rosa.png','img/robotron-vermelho.png'];
        
-let imagemAtual = 0; 
-        
  function mudaImagem(){
+     let imagemAtual = 0;
     imagemAtual++;
        
-    imagemAtual = imagemAtual % imagens.length;) 
+    imagemAtual = imagemAtual % imagens.length;
         
     const novoCaminho = imagens[imagemAtual];
     personagem.src = novoCaminho;
