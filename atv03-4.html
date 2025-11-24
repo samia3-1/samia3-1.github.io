@@ -15,7 +15,7 @@
 <body>
     <main>
         <section class="robotron">
-            <img class="robo" id='personagem' src="img/robotron.png" alt="Robotron">
+            <img class="robo" src="img/robotron.png" alt="Robotron">
             <figcaption class="titulo">ROBOTRON <br>2000</figcaption>
         </section>
 
@@ -52,85 +52,60 @@
                     <div class="peca">
                         <label for="" class="peca-titulo">Braços</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste">-</buttom>
-                            <input type="text" class="controle-contador" value="00">
-                            <buttom class="controle-ajuste">+</buttom>
+                            <button type='button' data-controle='-' data-peca='braco' class="controle-ajuste">-</button>
+                            <input type="text" class="controle-contador" value="00" data-contador readonly>
+                            <button type='button' data-controle='+' data-peca='braco' class="controle-ajuste">+</button>
                         </div>
                     </div>
                     <hr class="linha">
                     <div class="peca">
                         <label for="" class="peca-titulo">Blindagem</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste">-</buttom>
-                            <input type="text" class="controle-contador" value="00">
-                            <buttom class="controle-ajuste">+</buttom>
+                            <button type='button' data-controle='-' data-peca='blindagem' class="controle-ajuste">-</button>
+                            <input type="text" class="controle-contador" value="00" data-contador readonly>
+                            <button type='button' data-controle='+' data-peca='blindagem' class="controle-ajuste">+</button>
                         </div>
                     </div>
                     <hr class="linha">
                     <div class="peca">
                         <label for="" class="peca-titulo">Núcleos</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste" id='botao-menos>-</buttom>
-                            <input type="text" class="controle-contador" id="contador-valor" value="00">
-                            <buttom class="controle-ajuste" id='botao-mais'>+</buttom>
+                            <button type='button' data-controle='-' data-peca='nucleos' class="controle-ajuste">-</button>
+                            <input type="text" class="controle-contador" value="00" data-contador readonly>
+                            <button type='button' data-controle='+' data-peca='nucleos' class="controle-ajuste">+</button>
                         </div>
                     </div>
                     <hr class="linha">
                     <div class="peca">
                         <label for="" class="peca-titulo">Pernas</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste">-</buttom>
-                            <input type="text" class="controle-contador" value="00">
-                            <buttom class="controle-ajuste">+</buttom>
+                            <button type='button' data-controle='-' data-peca='pernas' class="controle-ajuste">-</button>
+                            <input type="text" class="controle-contador" value="00" data-contador readonly>
+                            <button type='button' data-controle='+' data-peca='pernas' class="controle-ajuste">+</button>
                         </div>
                     </div>
                     <hr class="linha">
                     <div class="peca">
                         <label for="" class="peca-titulo">Foguetes</label>
                         <div class="controle">
-                            <buttom class="controle-ajuste">-</buttom>
-                            <input type="text" class="controle-contador" value="00">
-                            <buttom class="controle-ajuste">+</buttom>
+                            <button type='button' data-controle='-' data-peca='foguetes' class="controle-ajuste">-</button>
+                            <input type="text" class="controle-contador" value="00" data-contador readonly>
+                            <button type='button' data-controle='+' data-peca='foguetes' class="controle-ajuste">+</button>
                         </div>
                     </div>
                 </div>
+                <div class='producao-container'>
                 <input type="submit" value="Iniciar produção" class="producao" id="producao">
-                <input type="button" value=">>>" id="trocar-cor" class="producao">
+                <div class='robotron-controle-producao'>
+                    <button type='button' class='troca-robo' id='robo-anterior' arial-label='Robô anterior'>&lt;</button>
+                    <button type='button' class='troca-robo' id='robo-proximo' arial-label='Próximo robô'>&gt;</button>
+                </div>
+                </div>    
             </form>
         </section>
     </main>
     <script>
-        
-const personagem = document.getElementById('personagem');
-const botaoCor = document.getElementById('trocar-cor');
-        
-const imagens = ['img/robotron.png','img/robotron-amarelo.png','img/robotron-branco.png','img/robotron-preto.png','img/robotron-rosa.png','img/robotron-vermelho.png'];
-       
-let imagemAtual = 0; 
-        
- function mudaImagem(){
-    imagemAtual++;
-       
-    imagemAtual = imagemAtual % imagens.length;
-        imagemAtual = 0;
-    }
-    const novoCaminho = imagens[imagemAtual];
-    personagem.src = novoCaminho;
-       
- }   
-        botaoCor.addEventListener('click', mudaImagem);
-
-      
-        const listaRobos = [
-  "img/robotron-azul.png",
-  "img/robotron-amarelo.png",
-  "img/robotron-branco.png",
-  "img/robotron-preto.png",
-  "img/robotron-rosa.png",
-  "img/robotron-vermelho.png"
-];                            
-
-const controles = document.querySelectorAll("[data-controle]");
+        const controles = document.querySelectorAll("[data-controle]");
 const estatisticas = document.querySelectorAll("[data-estatistica]");
 
 const pecas = {
@@ -217,9 +192,9 @@ function formatarValor(valor) {
   }
   return valor;
 }  
-    }
-        
-});
+}
+
+
     </script>
 </body>
 </html>
