@@ -1,272 +1,220 @@
-<html>
-  <head>
-    <title>Formulário</title>
-    <link rel="stylesheet" href="atv05.css">
-  </head>
-  <body>
-    <div class='div-pai'>
-      <h1>Escola Virtual</h1>
-      <h2>Formulário Pré-Matrícula</h2>
-      <form id="formulario-matricula">
-        <fieldset class='caixatxt'>
-          <div id='info-pessoais'>
-            <legend>Dados Pessoais: </legend>
-            <br><label>Nome do Aluno: </label> <input type='text' id="nome-aluno" name="nomeAluno">
-            <span id="erro-nomeAluno" class="erro-mensagem"></span>
-            
-            <br><label>Nascimento (dd/mm/aaaa): </label>
-            <input type='text' id='data-nascimento' name="dataNascimento" placeholder="dd/mm/aaaa">
-            <span id="erro-dataNascimento" class="erro-mensagem"></span>
-            
-            <br><label>Nome da Mãe: </label> <input type='text' id="nome-mae" name="nomeMae">
-            <span id="erro-nomeMae" class="erro-mensagem"></span>
-            
-            <br><label>Nome do Pai: </label> <input type='text' id="nome-pai" name="nomePai">
-            <span id="erro-nomePai" class="erro-mensagem"></span>
-            
-            <br><label>Telefone: DDD </label> <input type='text' id="telefone-ddd" name="telefoneDDD" maxlength="2">
-            <span id="erro-telefoneDDD" class="erro-mensagem"></span>
-            <br><label>Telefone: Número </label> <input type='text' id="telefone-numero" name="telefoneNumero">
-            <span id="erro-telefoneNumero" class="erro-mensagem"></span>
-            
-            <br><label>E-Mail: </label> <input type='email' id='email' name="email">
-            <span id="erro-email" class="erro-mensagem"></span>
-          </fieldset>
-        </div>
-        
-        <fieldset class='caixatxt'>
-          <legend>Informações de Matrícula: </legend>
-          <div id='serie' class='info-matricula'>
-            <br><label>Série: </label>
-            <select id="serie-select" name="serie">
-              <option value="" disabled selected>Selecione uma Série</option> <option value="pre-escolar">Pré-escolar</option>
-              <option value="1-fundamental">1° Fundamental</option>
-              <option value="2-fundamental">2° Fundamental</option>
-              <option value="ensino-medio">Ensino Médio</option>
-            </select>
-            <span id="erro-serie" class="erro-mensagem"></span>
-          </div>
-          
-          <div id='turno' class='info-matricula'>
-            <br><label>Turno: </label>
-            <br><input type='radio' name="turno" value="matutino"><label>Matutino</label>
-            <br><input type='radio' name="turno" value="vespertino"><label>Vespertino</label>
-            <span id="erro-turno" class="erro-mensagem"></span>
-          </div>
-          
-          <div id='atividades' class='info-matricula'>
-            <br><label>Atividades Extracurriculares: (Máx 3) </label>
-            <span id="erro-atividades" class="erro-mensagem"></span>
-            <br><input type='checkbox' class="atividade-checkbox" name="atividade" value="informatica"><label>Informática</label>
-            <br><input type='checkbox' class="atividade-checkbox" name="atividade" value="musica"><label>Música</label>
-            <br><input type='checkbox' class="atividade-checkbox" name="atividade" value="ballet"><label>Balet</label>
-            <br><input type='checkbox' class="atividade-checkbox" name="atividade" value="pintura"><label>Pintura</label>
-            <br><input type='checkbox' class="atividade-checkbox" name="atividade" value="judo"><label>Judo</label>
-            <br><input type='checkbox' class="atividade-checkbox" name="atividade" value="futebol"><label>Futebol</label>
-          </div>
-          
-          <br><input type='button' id="btn-enviar" value='Envia Formulário'>
-          <input type='button' id="btn-limpar" value='Limpar Formulário'>
-          
-        </fieldset>
-      </form>
-      <p id="mensagem-geral" style="margin-top: 20px; font-weight: bold;"></p>
-    </div>
-    
-    <style>
-        .erro-mensagem {
-            color: red;
-            display: block; /* Garante que a mensagem de erro fique em uma linha separada */
-            font-size: 0.9em;
-            font-style: italic;
-        }
-    </style>
-    
-    <script>
-      const form = document.getElementById('formulario-matricula');
-      const btnEnviar = document.getElementById('btn-enviar');
-      const btnLimpar = document.getElementById('btn-limpar');
-      const mensagemGeral = document.getElementById('mensagem-geral');
+<head>
+  <title>Escola Virtual</title>
+</head>
+<body>
+<div class='container'>
 
-      // Lista de inputs obrigatórios (por ID)
-      const camposObrigatorios = [
-        'nome-aluno', 'data-nascimento', 'nome-mae', 'nome-pai',
-        'telefone-ddd', 'telefone-numero', 'email', 'serie-select'
-      ];
+ <div id='tela-formulario'> 
+  <h1>Escola Virtual</h1>
+  <h2>Formulário de Pré-Matrícula</h2>
 
-      // Array de DDDs válidos no Brasil (não exaustivo, mas abrangente)
-      // Fonte: Pesquisa na internet
-      const dddsValidos = [
-        11, 12, 13, 14, 15, 16, 17, 18, 19, // SP
-        21, 22, 24, // RJ
-        27, 28, // ES
-        31, 32, 33, 34, 35, 37, 38, // MG
-        41, 42, 43, 44, 45, 46, // PR
-        47, 48, 49, // SC
-        51, 53, 54, 55, // RS
-        61, // DF e GO
-        62, 64, // GO
-        63, // TO
-        65, 66, // MT
-        67, // MS
-        68, // AC
-        69, // RO
-        71, 73, 74, 75, 77, // BA
-        79, // SE
-        81, 87, // PE
-        82, // AL
-        83, // PB
-        84, // RN
-        85, 88, // CE
-        86, 89, // PI
-        91, 93, 94, // PA
-        92, 97, // AM
-        95, // RR
-        96, // AP
-        98, 99 // MA
-      ];
+  <form id='form-matricula' novalidate>
+    <fieldset>
+      <legend>Dados Pessoais</legend>
+      <div class='form-grid'>
+
+        <label>Nome do Aluno:</label>
+        <input type='text' id='nomeAluno' placeholder='Nome Completo'>
+      <div class='mensagem-erro' id='erro-nomeAluno'>Digite o nome completo (mínimo 2 termos).</div>
+
+        <label>Nascimento:</label>
+       <div class='input-group'> 
+        <input style='width: 50px;' type='text' class='pequeno' id='nascDia' placeholder='Dia'>
+        <span>/</span>
+        <input style='width: 50px;' type='text' class='pequeno' id='nascMes' placeholder='Mês'>
+        <span>/</span>
+        <input style='width: 50px;' type='text' class='pequeno' id='nascAno' placeholder='Ano' >
+      </div>
+      <div class='mensagem-erro' id='erro-data'>Data inválida (Ex: 31/02 não existe).</div>
+
+     
+        <label>Nome do Pai:</label>
+        <input type='text' id='nomePai' placeholder='Nome e Sobrenome'>
+        <div class='mensagem-erro' id='erro-nomePai'>Digite o nome completo do pai.</div>
       
-      // Função para exibir erro localmente
-      function exibirErro(campoId, mensagem) {
-          const elementoErro = document.getElementById(`erro-${campoId}`);
-          if (elementoErro) {
-              elementoErro.textContent = mensagem;
-              elementoErro.style.display = 'block';
-              document.getElementById(campoId).classList.add('input-erro'); // Opcional: Adiciona classe para borda vermelha
-          }
-      }
+        <label>Nome da Mãe:</label>
+        <input type='text' id='nomeMae' placeholder='Nome e Sobrenome'>
+        <div class='mensagem-erro' id='erro-nomeMae'>Digite o nome do completo da mãe.</div>
+      
+        <label>Telefone:</label>
+        <div class='input-group'>
+          <input type='number' id='telDDD' class='input-pequeno' placeholder='DDD'>
+          <input type='number' id='telNumero' class='input-medio' placeholder='Ex: (99) 99999-9999'>
+          <span style='font-size: 0.8rem; margin-left: 10px;'>Ramal:</span>
+          <input type='number' id='telRamal' class='input-pequeno' placeholder='Ex: (Op)'>
+        </div>
+      <div class='mensagem-erro' id='erro-telefone'>DDD inválido ou telefone incompleto.</div>
 
-      // Função para limpar erro localmente
-      function limparErro(campoId) {
-          const elementoErro = document.getElementById(`erro-${campoId}`);
-          if (elementoErro) {
-              elementoErro.textContent = '';
-              elementoErro.style.display = 'none';
-              document.getElementById(campoId).classList.remove('input-erro'); // Opcional: Remove classe
-          }
-      }
+        <label>Email:</label>
+        <input id='email' placeholder='Ex: seunome@gmail.com'>
+        <div class='mensagem-erro' id='erro-email'>O email deve ter @ (Arroba) e . (ponto final)</div>
+        
+      </div>
+    </fieldset>
+    
+    <fieldset>
+      <legend>Informações de Matrícula</legend>
+      <div class='form-grid'>
 
-      // Função principal de validação (executada ao clicar em Enviar)
-      function validarFormulario() {
-          let erros = 0;
-          mensagemGeral.textContent = ''; // Limpa mensagem geral
+          <label>Série:</label>
+            <select id='serie'>
+              <option value='' disabled selected>Selecione...</option>
+              <option value='pre'>Pré-escolar</option>
+              <option value='1ano'>1° Ano</option>
+              <option value='2ano'>2° Ano</option>
+              <option value='3ano'>3° Ano</option>
+            </select>
+        <div class='mensagem-erro' id='erro-serie'>Selecione uma série.</div>
+        
+          <label>Turno:</label>
+          <div style='display: flex; gap: 20px'>
+            <label class='label-opcao'><input type='radio' name='turno' value='manha'> Manhã</label>
+            <label class='label-opcao'><input type='radio' name='turno' value='tarde'> Tarde</label>
+          </div>
+          <div class='mensagem-erro' id='erro-turno'>Selecione um turno.</div>
 
-          // --- 1. Validação de Campos Obrigatórios ---
-          camposObrigatorios.forEach(id => {
-              const input = document.getElementById(id);
-              if (input && input.value.trim() === '') {
-                  exibirErro(id, '* Campo obrigatório.');
-                  erros++;
-              } else {
-                  limparErro(id);
-              }
-          });
-          
-          // --- 2. Validação Específica: Série (Select) ---
-          const serieSelect = document.getElementById('serie-select');
-          if (serieSelect && serieSelect.value === '') {
-             exibirErro('serie', '* Selecione uma série.');
-             erros++;
-          } else {
-             limparErro('serie');
-          }
+          <label>Atividades Extracurrículares:<br><span style='font-size: 0.7rem; font-weight: normal'>(Máx. 3)</span></label>
+          <div class='grid-opcoes'>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='info'> Informática</label>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='musica'> Música</label>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='balet'> Balet</label>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='pintura'> Pintura</label>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='judo'> Judô</label>
+            <label class='label-opcao'><input type='checkbox' class='check-atv' value='futebol'> Futebol</label>
+          </div>
+        </div>
+    </fieldset>
 
-          // --- 3. Validação Específica: E-mail ---
-          const email = document.getElementById('email').value.trim();
-          const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (email !== '' && !regexEmail.test(email)) {
-              exibirErro('email', '* E-mail inválido (precisa de @ e .)');
-              erros++;
-          }
-          // (A obrigatoriedade já foi verificada no passo 1)
+    <div class='botoes-container'>
+      <button type='submit'>Matricular Aluno</button>
+      <button type='reset' class='btn-reset'>Limpar Matrícula</button>
+    </div>  
+  </form>
+ </div>
 
-          // --- 4. Validação Específica: Data de Nascimento ---
-          const dataNasc = document.getElementById('data-nascimento').value.trim();
-          const regexData = /^(\d{2})\/(\d{2})\/(\d{4})$/; // Formato dd/mm/aaaa
-          if (dataNasc !== '') {
-              const match = dataNasc.match(regexData);
-              let dataValida = false;
+ <div id='tela-sucesso'>
+   <div class='icone-sucesso'>✓</div>
+   <h1 style='color: #43a047;'>Sucesso!</h1>
+   <p style='font-size: 1.2rem; color: #555;'>O cadastro do aluno foi realizado com sucesso.</p>
+   <button onClick='location.reload()' style='margin-top: 30px; background-color: #43a047;'>Novo Cadastro</button>
+ </div>
 
-              if (match) {
-                  const dia = parseInt(match[1], 10);
-                  const mes = parseInt(match[2], 10);
-                  const ano = parseInt(match[3], 10);
+</div>
+  <script>
+    const form = document.getElementById('form-matricula');
+const checksAtividades = document.querySelectorAll('.check-atv');
+const dddsValidos = [11,12,13,14,15,16,17,18,19,21,22,24,27,28,31,32,33,34,35,37,38,41,42,43,44,45,46,47,48,49,51,53,54,55,61,62,64,63,65,66,67,68,69,71,73,74,75,77,79,81,87,82,83,84,85,88,86,89,91,93,94,92,97,95,96,98,99];
 
-                  const data = new Date(ano, mes - 1, dia); // Mês é 0-indexado (0=Jan, 11=Dez)
-                  
-                  // Verifica se a data é válida e se corresponde à entrada (ex: 30/02 não é válido)
-                  if (data.getFullYear() === ano && (data.getMonth() + 1) === mes && data.getDate() === dia) {
-                      dataValida = true;
-                  }
-              }
+checksAtividades.forEach(check => {
+  check.addEventListener('change', function() {
+    const quantosMarcados = document.querySelectorAll('.check-atv:checked').length;
+    if (quantosMarcados > 3) {
+      this.checked = false;
+      alert('Atenção: O limite é de 3 atividades extracurriculares.');
+    }
+  });
+});
 
-              if (!dataValida) {
-                  exibirErro('dataNascimento', '* Data inválida ou formato incorreto (dd/mm/aaaa).');
-                  erros++;
-              } else {
-                  limparErro('dataNascimento');
-              }
-          }
-          // (A obrigatoriedade já foi verificada no passo 1)
+function mostrarErro(idElemento, idMensagem, mostrar) {
+  const elemento = document.getElementById(idElemento);
+  const msg = document.getElementById(idMensagem);
 
-          // --- 5. Validação Específica: DDD ---
-          const ddd = document.getElementById('telefone-ddd').value.trim();
-          const dddNum = parseInt(ddd, 10);
-          if (ddd !== '' && !dddsValidos.includes(dddNum)) {
-              exibirErro('telefoneDDD', '* DDD inválido.');
-              erros++;
-          }
-          // (A obrigatoriedade já foi verificada no passo 1)
-          
-          // --- 6. Validação Específica: Turno (Radio) ---
-          let turnoSelecionado = false;
-          const radioTurno = document.querySelectorAll('input[name="turno"]');
-          radioTurno.forEach(radio => {
-              if (radio.checked) {
-                  turnoSelecionado = true;
-              }
-          });
-          
-          if (!turnoSelecionado) {
-              exibirErro('turno', '* Selecione um turno.');
-              erros++;
-          } else {
-              limparErro('turno');
-          }
+  if (!elemento || !msg) {
+    console.error('ERRO DE CÓDIGO: ID não encontrado ->', idInput, idMensagem);
+    return true;
+  }
 
-          // --- 7. Validação Específica: Limite de Atividades Extracurriculares (Opcional) ---
-          const atividades = document.querySelectorAll('.atividade-checkbox:checked');
-          if (atividades.length > 3) {
-              exibirErro('atividades', '* Máximo de 3 atividades permitidas.');
-              erros++;
-          } else {
-              limparErro('atividades');
-          }
-          
-          // --- 8. Resultado Final ---
-          if (erros === 0) {
-              mensagemGeral.textContent = '🎉 Cadastro realizado com sucesso!';
-              mensagemGeral.style.color = 'green';
-              form.reset();
-          } else {
-              mensagemGeral.textContent = `❌ Erro(s) no formulário. Por favor, corrija os ${erros} campos indicados.`;
-              mensagemGeral.style.color = 'red';
-          }
-      }
+  if (mostrar) {
+    elemento.classList.add('input-erro');
+    msg.classList.add('ativo');
+    return false;
+  } else {
+    elemento.classList.remove('input-erro');
+    msg.classList.remove('ativo');
+    return true;
+  }
+} 
 
-      // --- Adicionando Listeners de Evento ---
-      btnEnviar.addEventListener('click', validarFormulario);
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  let formularioValido = true;
 
-      btnLimpar.addEventListener('click', function() {
-          form.reset();
-          // Limpa todas as mensagens de erro
-          document.querySelectorAll('.erro-mensagem').forEach(span => {
-              span.textContent = '';
-              span.style.display = 'none';
-          });
-          document.querySelectorAll('.input-erro').forEach(input => input.classList.remove('input-erro'));
-          mensagemGeral.textContent = '';
-      });
-    </script>
-  </body>
-</html>
+  const validaNome = (idInput, idMsg) => {
+    const elemento = document.getElementById(idInput);
+    if(!elemento) return false;
+    
+    const valor = document.getElementById(idInput).value.trim();
+    const termos = valor.split(/\s+/).filter(t => t.length > 0);
+
+    const temErroNoNome = termos.length < 2;
+    
+    return mostrarErro(idInput, idMsg, termos.length < 2);
+  };
+
+  if (!validaNome('nomeAluno', 'erro-nomeAluno')) formularioValido = false;
+  if (!validaNome('nomeMae', 'erro-nomeMae')) formularioValido = false;
+  if (!validaNome('nomePai', 'erro-nomePai')) formularioValido = false; 
+
+  const emailValor = document.getElementById('email').value;
+  const emailValido = emailValor.includes('@') && emailValor.includes('.');
+  if (!mostrarErro('email', 'erro-email', !emailValido)) formularioValido = false;
+
+  const dia = parseInt(document.getElementById('nascDia').value);
+  const mes = parseInt(document.getElementById('nascMes').value);
+  const ano = parseInt(document.getElementById('nascAno').value);
+  const msgData = document.getElementById('erro-data');
+
+  const dataObj = new Date(ano, mes - 1, dia);
+  const dataReal = (dataObj.getFullYear() === ano && (dataObj.getMonth() + 1) === mes && dataObj.getDate() === dia);
+
+  if (!dataReal || ano < 1900 || ano > 2025) {
+    document.getElementById('nascDia').classList.add('input-erro');
+    document.getElementById('nascMes').classList.add('input-erro');
+    document.getElementById('nascAno').classList.add('input-erro');
+    msgData.classList.add('ativo');
+    formularioValido = false;
+  } else {
+    document.getElementById('nascDia').classList.remove('input-erro');
+    document.getElementById('nascMes').classList.remove('input-erro');
+    document.getElementById('nascAno').classList.remove('input-erro');
+    msgData.classList.remove('ativo');
+  }
+
+    const ddd = parseInt(document.getElementById('telDDD').value);
+    const tel = document.getElementById('telNumero').value;
+    const dddValido = dddsValidos.includes(ddd);
+    const telPreenchido = tel.length >= 8;
+
+    if (!mostrarErro('telNumero', 'erro-telefone', (!dddValido || !telPreenchido))) {
+      document.getElementById('telDDD').classList.add('input-erro');
+      formularioValido = false;
+  } else {
+      document.getElementById('telDDD').classList.remove('input-erro');
+  }
+
+    if (document.getElementById('serie').value === '') {
+      mostrarErro('serie', 'erro-serie', true);
+      formularioValido = false;
+  } else {
+      mostrarErro('serie', 'erro-serie', false);
+  }
+
+    const turnoMarcado = document.querySelector('input[name="turno"]:checked');
+    const msgTurno = document.getElementById('erro-turno');
+    if (!turnoMarcado) {
+      msgTurno.classList.add('ativo');
+      formularioValido = false;
+  } else {
+      msgTurno.classList.remove('ativo');
+  }
+
+    if (formularioValido) {
+      document.getElementById('tela-formulario').style.display = 'none';
+      document.getElementById('tela-sucesso').style.display = 'block';
+  } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  } 
+});
+  </script>
+</body>
+
