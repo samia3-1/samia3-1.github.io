@@ -227,13 +227,37 @@ Com experiência em feiras gastronômicas e projetos com produtores locais, ela 
 
 
      <h3 class="h5 mt-3">Formulário de Reserva</h3>
-     <p>
-       [Formulário de reservas.] Aqui os alunos devem criar um formulário
-       usando componentes de formulário do Bootstrap, com campos para:
-       data, horário, número de pessoas, nome, telefone e e-mail.
-     </p>
 
-
+      <form>
+       <label>Nome: </label>
+       <input type='text'>
+        <label for="exampleFormControlInput1" class="form-label">Email:</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+  <div>
+   <label>Telefone: </label>
+   <input type='tel'>
+  </div>
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Quantidade de Pessoas: </label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+     <div class="form-group">
+      <label for="exampleFormControlSelect1">Data: </label>
+      <input type='data' class='form-control'>
+     </div>
+     <div>
+      <label>Horário: </label>
+      <input type="time">
+     </div>
+  </div>
+      </form>
+      <div class="mb-3">
      <!-- TODO: Formulário Bootstrap de reserva -->
 
 
