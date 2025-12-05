@@ -413,9 +413,53 @@ Com experiência em feiras gastronômicas e projetos com produtores locais, ela 
 
      <h3 class="h5 mt-3">Formulário de Contato</h3>
      <p>
-       [Formulário de contato.] Crie um formulário com campos para nome,
-       e-mail, assunto e mensagem, usando os componentes de formulário do
-       Bootstrap.
+       <div class="container">
+  <form>
+
+    <div class="row">
+      <!-- Nome Completo -->
+      <div class="col-md-6 mb-3">
+        <label for="nome" class="form-label">
+          <i class="bi bi-person-fill"></i> Nome Completo
+        </label>
+        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" required>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-6 mb-3">
+        <label for="email" class="form-label">
+          <i class="bi bi-envelope-fill"></i> Email
+        </label>
+        <input type="email" class="form-control" id="email" placeholder="exemplo@email.com" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Assunto -->
+      <div class="col-md-12 mb-3">
+        <label for="assunto" class="form-label">
+          <i class="bi bi-chat-square-text-fill"></i> Assunto
+        </label>
+        <input type="text" class="form-control" id="assunto" placeholder="Qual é o assunto da mensagem?" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Mensagem -->
+      <div class="col-md-12 mb-3">
+        <label for="mensagem" class="form-label">
+          <i class="bi bi-pencil-square"></i> Mensagem
+        </label>
+        <textarea class="form-control" id="mensagem" rows="4" placeholder="Digite sua mensagem aqui..." required></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      <i class="bi bi-send-fill"></i> Enviar
+    </button>
+
+  </form>
+</div>
      </p>
 
 
@@ -429,13 +473,78 @@ Com experiência em feiras gastronômicas e projetos com produtores locais, ela 
    <div class="container">
      <h2 class="mb-3">Pedidos Online e Entrega</h2>
      <p>
-       [Pedidos online.] Descreva como o cliente pode fazer pedidos para
-       retirada ou entrega (por telefone, site, aplicativo, WhatsApp etc.).
+       <section id="pedidos-online" style="font-family: Arial, sans-serif; line-height: 1.6;">
+  <h2>Pedidos Online – Broto & Sabor</h2>
+  <p>Faça seu pedido para <strong>retirada</strong> de forma rápida e prática pelos nossos canais:</p>
+
+  <ul>
+    <li>
+      <strong>📞 Telefone:</strong> 
+      <a href="tel:+5582987654321">(82) 98765-4321</a>  
+      — Ligue e faça seu pedido diretamente com nossa equipe.
+    </li>
+
+    <li>
+      <strong>💬 WhatsApp:</strong> 
+      <a href="https://wa.me/5582987654321" target="_blank">Clique aqui para pedir pelo WhatsApp</a>  
+      — Atendimento rápido e confirmação imediata.
+    </li>
+
+    <li>
+      <strong>🛍️ Retirada:</strong>  
+      Disponível na unidade: Rua das Acácias, 128 – Bairro Jatiúca, Maceió – AL.
+    </li>
+  </ul>
+</section>
      </p>
      <p>
-       [Áreas de entrega.] Liste os bairros atendidos e os tempos estimados de
-       entrega. Os alunos podem usar listas, cards ou tabelas para organizar
-       essas informações.
+       <section id="areas-entrega" style="font-family: Arial, sans-serif; line-height: 1.6;">
+  <h2>Áreas de Entrega – Broto & Sabor</h2>
+  <p>Confira os bairros atendidos e o tempo estimado de entrega:</p>
+
+  <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: left;">
+    <thead style="background-color: #a2d39c;">
+      <tr>
+        <th>Bairro</th>
+        <th>Tempo Estimado de Entrega</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jatiúca</td>
+        <td>15 – 20 min</td>
+      </tr>
+      <tr>
+        <td>Ponta Verde</td>
+        <td>20 – 25 min</td>
+      </tr>
+      <tr>
+        <td>Mangabeiras</td>
+        <td>25 – 30 min</td>
+      </tr>
+      <tr>
+        <td>Farol</td>
+        <td>30 – 35 min</td>
+      </tr>
+      <tr>
+        <td>Jardim Petrópolis</td>
+        <td>35 – 40 min</td>
+      </tr>
+      <tr>
+        <td>Gruta de Lourdes</td>
+        <td>25 – 30 min</td>
+      </tr>
+      <tr>
+        <td>Centro</td>
+        <td>30 – 35 min</td>
+      </tr>
+      <tr>
+        <td>Tabuleiro do Martins</td>
+        <td>40 – 45 min</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
      </p>
    </div>
  </section>
@@ -466,7 +575,7 @@ Com experiência em feiras gastronômicas e projetos com produtores locais, ela 
 
  <!-- ================== FOOTER ================== -->
  <footer class="bg-dark text-white text-center py-3">
-   <small>© 2025 Nome do Restaurante - Todos os direitos reservados.</small>
+   <small>© 2025 Broto & Sabor - Todos os direitos reservados.</small>
  </footer>
 
 
