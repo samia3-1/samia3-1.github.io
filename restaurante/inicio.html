@@ -10,68 +10,82 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-img {
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
-    border-radius: 20px;
-}
+    img {
+      height: 300px;
+      width: 300px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
 
-.mudarCor {
-  background-color: rgb(238, 238, 238) !important;
-}
+    .mudarCor {
+      background-color: rgb(238, 238, 238) !important;
+    }
+
     table {
-    /* Garante que as bordas de células adjacentes se unam */
-    border-collapse: collapse;
-    /* Alterado: Define a largura da tabela para 80% e a centraliza */
-    width: 80%; 
-    margin: 20px auto;
-    /* Fonte mais limpa para o corpo do texto */
-    font-family: Arial, sans-serif;
-    /* Sombra suave para dar profundidade */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px; /* Cantos arredondados */
-    overflow: hidden; /* Garante que os cantos arredondados sejam respeitados */
-}
+      /* Garante que as bordas de células adjacentes se unam */
+      border-collapse: collapse;
+      /* Alterado: Define a largura da tabela para 80% e a centraliza */
+      width: 80%;
+      margin: 20px auto;
+      /* Fonte mais limpa para o corpo do texto */
+      font-family: Arial, sans-serif;
+      /* Sombra suave para dar profundidade */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      /* Cantos arredondados */
+      overflow: hidden;
+      /* Garante que os cantos arredondados sejam respeitados */
+    }
 
-/* Estilo para as células do cabeçalho (th) e do corpo (td) */
-th, td {
-    border: 1px solid #dddddd; /* Borda cinza clara para separação */
-    padding: 12px 15px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto nas células */
-}
+    /* Estilo para as células do cabeçalho (th) e do corpo (td) */
+    th,
+    td {
+      border: 1px solid #dddddd;
+      /* Borda cinza clara para separação */
+      padding: 12px 15px;
+      /* Espaçamento interno */
+      text-align: center;
+      /* Centraliza o texto nas células */
+    }
 
-/* Estilo especial para o cabeçalho da tabela */
-thead th {
-    /* Alterado: Cor de fundo bege (#f5f5dc é um tom clássico de bege) */
-    background-color: #a7d887; 
-    color: #333333; /* Texto escuro para contrastar com o bege */
-    text-transform: uppercase; /* Texto em caixa alta */
-    letter-spacing: 1px;
-    font-size: 1.1em;
-}
+    /* Estilo especial para o cabeçalho da tabela */
+    thead th {
+      /* Alterado: Cor de fundo bege (#f5f5dc é um tom clássico de bege) */
+      background-color: #a7d887;
+      color: #333333;
+      /* Texto escuro para contrastar com o bege */
+      text-transform: uppercase;
+      /* Texto em caixa alta */
+      letter-spacing: 1px;
+      font-size: 1.1em;
+    }
 
-/* Estilo para linhas pares (zebra striping) para melhor legibilidade */
-tbody tr:nth-child(even) {
-    background-color: #d1d1d1; /* Fundo cinza bem claro para linhas pares */
-}
+    /* Estilo para linhas pares (zebra striping) para melhor legibilidade */
+    tbody tr:nth-child(even) {
+      background-color: #d1d1d1;
+      /* Fundo cinza bem claro para linhas pares */
+    }
 
-/* Efeito de hover (passar o mouse) para interação */
-tbody tr:hover {
-    background-color: #c5ddba; /* Fundo ligeiramente mais escuro ao passar o mouse */
-    cursor: default; /* Mantém o cursor padrão */
-}
+    /* Efeito de hover (passar o mouse) para interação */
+    tbody tr:hover {
+      background-color: #c5ddba;
+      /* Fundo ligeiramente mais escuro ao passar o mouse */
+      cursor: default;
+      /* Mantém o cursor padrão */
+    }
 
-h1, h2 {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-  }
-  a {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  }
+    h1,
+    h2 {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    a {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
   </style>
-  
+
   <title>Restaurante - Broto & Sabor</title>
-  
+
 </head>
 
 <body>
@@ -118,7 +132,8 @@ h1, h2 {
       </p>
       <p>
         O nosso Restaurante Broto & Sabor oferece culinária vegana contemporânea, com pratos feitos a partir de
-        ingredientes frescos e naturais. Nosso ambiente é casual e acolhedor, ideal para famílias, casais e quem deseja uma
+        ingredientes frescos e naturais. Nosso ambiente é casual e acolhedor, ideal para famílias, casais e quem deseja
+        uma
         refeição tranquila em um espaço confortável.
       </p>
 
@@ -128,7 +143,7 @@ h1, h2 {
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="../comidas/risoto-de-legumes.webp" class="d-block w-100" alt="..." >
+            <img src="../comidas/risoto-de-legumes.webp" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
             <img src="../comidas/strogonoff-vegano.jpg" class="d-block w-100" alt="...">
@@ -157,27 +172,27 @@ h1, h2 {
       <h2 class="mb-3 text-center text-bg-success d-block">Horário de Funcionamento</h2>
 
       <table>
-  <thead>
-    <tr>
-      <th>Dia da Semana</th>
-      <th>Horário de Funcionamento</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Segunda a Sexta</strong></td>
-      <td>7h às 22h</td>
-    </tr>
-    <tr>
-      <td><strong>Sábado</strong></td>
-      <td>9h às 20h</td>
-    </tr>
-    <tr>
-      <td><strong>Domingo</strong></td>
-      <td>9h às 16h30min</td>
-    </tr>
-  </tbody>
-</table>
+        <thead>
+          <tr>
+            <th>Dia da Semana</th>
+            <th>Horário de Funcionamento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Segunda a Sexta</strong></td>
+            <td>7h às 22h</td>
+          </tr>
+          <tr>
+            <td><strong>Sábado</strong></td>
+            <td>9h às 20h</td>
+          </tr>
+          <tr>
+            <td><strong>Domingo</strong></td>
+            <td>9h às 16h30min</td>
+          </tr>
+        </tbody>
+      </table>
       </p>
     </div>
   </section>
