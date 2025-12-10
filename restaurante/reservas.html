@@ -1,0 +1,191 @@
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+ <!-- BOOTSTRAP CSS -->
+ <link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+   rel="stylesheet">
+
+
+ <title>Restaurante - Broto & Sabor</title>
+</head>
+<body>
+
+
+ <!-- ================== NAVBAR ================== -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+   <div class="container">
+     <a class="navbar-brand" href="#">Broto & Sabor</a>
+
+
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+
+
+     <div class="collapse navbar-collapse" id="menuNavbar">
+       <ul class="navbar-nav ms-auto">
+         <li class="nav-item"><a class="nav-link" href="restaurante.html">Início</a></li>
+         <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+         <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
+         <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+         <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+         <li class="nav-item"><a class="nav-link" href="contato.html">Fale Conosco</a></li>
+         <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos Online</a></li>
+         <li class="nav-item"><a class="nav-link" href="promocoes.html">Promoções</a></li>
+       </ul>
+     </div>
+   </div>
+ </nav>
+ <!-- ================== 4. RESERVAS ================== -->
+ <section id="reservas" class="py-5">
+   <div class="container">
+     <h2 class="mb-3">Reservas</h2>
+
+
+     <h3 class="h5 mt-3">Formulário de Reserva</h3>
+
+      <form>
+       <label>Nome: </label>
+       <input type='text'>
+        <label for="exampleFormControlInput1" class="form-label">Email:</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+  <div>
+   <label>Telefone: </label>
+   <input type='tel' placeholder='(xx) 9xxxx-xxxx'>
+  </div>
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Quantidade de Pessoas: </label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+     <div class="form-group">
+      <label for="exampleFormControlSelect1">Data: </label>
+      <input type='date' class='form-control'>
+     </div>
+     <div>
+      <label>Horário: </label>
+      <input type="time">
+     </div>
+  </div>
+      </form>
+      <div class="mb-3">
+     <!-- TODO: Formulário Bootstrap de reserva -->
+<h3 class="h5 mt-3">Política de Reservas</h3>
+
+<div class="accordion" id="accordionExample">
+
+  <!-- Item 1 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        1. Como Fazer Sua Reserva
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Reservas podem ser realizadas pelo site, telefone, WhatsApp ou redes sociais oficiais</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 2 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        2. Horário de Tolerância
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Trabalhamos com 15 minutos de tolerância após o horário marcado. 
+        Após esse período, a mesa pode ser liberada para outros clientes.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 3 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        3. Cancelamentos e Alterações
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Cancelamentos podem ser feitos até 2 horas antes. 
+        Alterações no horário ou número de pessoas devem ser comunicadas com antecedência.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 4 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        4. Reservas para Grupos
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Grupos acima de 8 pessoas devem reservar com no mínimo 24 horas de antecedência. 
+        Pode ser solicitado pré-pagamento simbólico, revertido em consumo.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 5 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        5. Sustentabilidade
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Recomendamos avisar em caso de cancelamento para evitar desperdício de ingredientes. 
+        Alimentos externos devem ser confirmados como 100% veganos.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 6 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+        6. Tempo de Permanência
+      </button>
+    </h2>
+    <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Em dias de alta demanda, o tempo pode ser limitado a 1h30 – 2h por mesa.</strong>
+      </div>
+    </div>
+  </div>
+
+</div>
+ <!-- ================== FOOTER ================== -->
+ <footer class="bg-dark text-white text-center py-3">
+   <small>© 2025 Broto & Sabor - Todos os direitos reservados.</small>
+ </footer>
+
+
+ <!-- BOOTSTRAP JS -->
+ <script
+   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+ </script>
+</body>
+</html>
+
+</body>
+</html>
