@@ -16,16 +16,69 @@ img {
     object-fit: cover;
     border-radius: 20px;
 }
-    
+
+.mudarCor {
+  background-color: rgb(238, 238, 238) !important;
+}
+    table {
+    /* Garante que as bordas de células adjacentes se unam */
+    border-collapse: collapse;
+    /* Alterado: Define a largura da tabela para 80% e a centraliza */
+    width: 80%; 
+    margin: 20px auto;
+    /* Fonte mais limpa para o corpo do texto */
+    font-family: Arial, sans-serif;
+    /* Sombra suave para dar profundidade */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Cantos arredondados */
+    overflow: hidden; /* Garante que os cantos arredondados sejam respeitados */
+}
+
+/* Estilo para as células do cabeçalho (th) e do corpo (td) */
+th, td {
+    border: 1px solid #dddddd; /* Borda cinza clara para separação */
+    padding: 12px 15px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto nas células */
+}
+
+/* Estilo especial para o cabeçalho da tabela */
+thead th {
+    /* Alterado: Cor de fundo bege (#f5f5dc é um tom clássico de bege) */
+    background-color: #a7d887; 
+    color: #333333; /* Texto escuro para contrastar com o bege */
+    text-transform: uppercase; /* Texto em caixa alta */
+    letter-spacing: 1px;
+    font-size: 1.1em;
+}
+
+/* Estilo para linhas pares (zebra striping) para melhor legibilidade */
+tbody tr:nth-child(even) {
+    background-color: #d1d1d1; /* Fundo cinza bem claro para linhas pares */
+}
+
+/* Efeito de hover (passar o mouse) para interação */
+tbody tr:hover {
+    background-color: #c5ddba; /* Fundo ligeiramente mais escuro ao passar o mouse */
+    cursor: default; /* Mantém o cursor padrão */
+}
+
+h1, h2 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+  a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
   </style>
+  
   <title>Restaurante - Broto & Sabor</title>
+  
 </head>
 
 <body>
 
 
   <!-- ================== NAVBAR ================== -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">Broto & Sabor</a>
 
@@ -52,7 +105,7 @@ img {
 
 
   <!-- ================== 1. PÁGINA INICIAL ================== -->
-  <section id="inicio" class="bg-light py-5">
+  <section id="inicio" class="bg-light py-5 mudarCor">
     <div class="container">
       <h1 class="mb-3 text-center text-bg-success d-block">Página Inicial</h1>
       <p>
@@ -60,16 +113,13 @@ img {
         Aqui, cada prato nasce do respeito à natureza e do desejo de oferecer uma experiência leve, saborosa e cheia de
         vida. Nosso compromisso é transformar ingredientes frescos e plant-based em refeições criativas, nutritivas e
         cheias de afeto.
-        Sinta-se em casa para explorar novos sabores, celebrar a culinária vegana e desfrutar de um ambiente acolhedor
-        onde cada detalhe foi pensado para você.
         Que sua experiência aqui floresça com sabor, saúde e consciência.
         É um prazer ter você conosco!
       </p>
       <p>
         O nosso Restaurante Broto & Sabor oferece culinária vegana contemporânea, com pratos feitos a partir de
-        ingredientes frescos e naturais. Atendemos tanto o público vegano quanto pessoas que buscam refeições mais leves
-        e saudáveis no dia a dia. Nosso ambiente é casual e acolhedor, ideal para famílias, casais e quem deseja uma
-        refeição tranquila em um espaço confortável
+        ingredientes frescos e naturais. Nosso ambiente é casual e acolhedor, ideal para famílias, casais e quem deseja uma
+        refeição tranquila em um espaço confortável.
       </p>
 
 
@@ -104,20 +154,37 @@ img {
 
       <!-- TODO: Inserir horários de funcionamento (tabela ou lista) -->
       <p class="mt-4">
-      <h2>Horário de Funcionamento</h2>
+      <h2 class="mb-3 text-center text-bg-success d-block">Horário de Funcionamento</h2>
 
-      <ul>
-        <li><strong>Segunda a Sexta:</strong> 11h às 15h / 18h às 22h</li>
-        <li><strong>Sábado:</strong> 11h às 22h</li>
-        <li><strong>Domingo:</strong> 11h às 16h</li>
-      </ul>
+      <table>
+  <thead>
+    <tr>
+      <th>Dia da Semana</th>
+      <th>Horário de Funcionamento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Segunda a Sexta</strong></td>
+      <td>7h às 22h</td>
+    </tr>
+    <tr>
+      <td><strong>Sábado</strong></td>
+      <td>9h às 20h</td>
+    </tr>
+    <tr>
+      <td><strong>Domingo</strong></td>
+      <td>9h às 16h30min</td>
+    </tr>
+  </tbody>
+</table>
       </p>
     </div>
   </section>
 
 
   <!-- ================== FOOTER ================== -->
-  <footer class="bg-dark text-white text-center py-3">
+  <footer class="bg-success text-white text-center py-3">
     <small>© 2025 Broto & Sabor - Todos os direitos reservados.</small>
   </footer>
 
