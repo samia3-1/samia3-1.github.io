@@ -9,38 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* Manter a fonte para a identidade do site */
+        /* Manter a fonte "Lucida Sans" para todos os textos, conforme a imagem */
+        body,
         a,
+        p,
         h1,
         h2,
         h3,
-        label {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
-
-        /* Ajustes do Carrossel no topo */
-        .carousel-top-section {
-            padding: 0; /* Remove padding na seção para garantir largura total */
-            margin: 0;
-            background-color: var(--bs-success-bg-subtle); /* Fundo verde suave no topo */
-        }
-
-        .carousel-top-section .carousel-inner,
-        .carousel-top-section img {
-            border-radius: 0 !important; /* Remove o arredondamento */
-        }
-
-        /* Ajuste da imagem para ocupar o espaço do carrossel */
-        .carousel-item img {
-            height: 450px; /* Aumentei ligeiramente para maior impacto visual */
-            width: 100%;
-            object-fit: cover;
-            /* O border-radius será 0 graças ao estilo acima */
-        }
-
-        /* Estilo da área de Conteúdo Principal (Texto e Tabela) - Fundo Branco */
-        .main-content-area {
-            background-color: white !important; /* Fundo branco para contraste */
+        label,
+        table {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
         }
 
         /* Os títulos agora usam a cor 'success' do Bootstrap */
@@ -49,18 +27,29 @@
             color: var(--bs-success);
         }
 
-        /* Estilo para a classe customizada de fundo verde sutil (bg-success-subtle) */
-        .bg-success-subtle {
+        /* Estilo da imagem do Carrossel (Arredondado, como estava originalmente) */
+        .carousel-item img {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 20px; /* Arredondamento reintroduzido */
+        }
+
+        /* Estilo da área de Conteúdo Principal (Texto e Carrossel) - Fundo Verde Suave */
+        .content-verde-suave {
             background-color: var(--bs-success-bg-subtle) !important;
         }
 
+        /* Estilo da área da Tabela (Fundo Branco) */
+        .content-branco {
+            background-color: white !important;
+        }
 
         /* Estilo da Tabela (Mantido o design customizado original) */
         table {
             border-collapse: collapse;
             width: 80%;
             margin: 20px auto;
-            font-family: Arial, sans-serif;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             overflow: hidden;
@@ -124,8 +113,23 @@
     </nav>
 
 
-    <section id="carousel" class="py-5 carousel-top-section bg-success-subtle">
-        <div class="container-fluid">
+    <section id="inicio-content" class="py-5 content-verde-suave">
+        <div class="container">
+
+            <h1 class="display-5 text-success mb-4">🌱 Broto & Sabor</h1>
+
+            <p>
+                Bem-vindo ao Broto e Sabor!
+                Aqui, cada prato nasce do **respeito à natureza e do desejo de oferecer uma experiência leve, saborosa e cheia de vida**. Nosso compromisso é transformar ingredientes frescos e plant-based em refeições criativas, nutritivas e cheias de afeto. Que sua experiência aqui floresça com sabor, saúde e consciência. É um prazer ter você conosco!
+            </p>
+
+            <p class="mb-5">
+                O nosso Restaurante Broto & Sabor oferece culinária vegana contemporânea, com pratos feitos a partir de
+                ingredientes frescos e naturais. Nosso ambiente é casual e acolhedor, ideal para famílias, casais e quem deseja
+                uma refeição tranquila em um espaço confortável.
+            </p>
+
+
             <div id="carouselDestaque" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -150,38 +154,13 @@
                     <span class="visually-hidden">Próximo</span>
                 </button>
             </div>
+            
         </div>
     </section>
 
-    <section id="inicio" class="py-5 main-content-area">
+    <section id="horarios-tabela" class="py-5 content-branco">
         <div class="container">
-            <h1 class="display-4 text-center text-success fw-bold mb-4">🌱 Broto & Sabor: Culinária Vegana & Saudável</h1>
-
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <p class="lead text-center mb-5">
-                        Bem-vindo ao Broto e Sabor!
-                        Aqui, cada prato nasce do respeito à natureza e do desejo de oferecer uma experiência leve, saborosa e cheia de
-                        vida. Nosso compromisso é transformar ingredientes frescos e plant-based em refeições criativas, nutritivas e
-                        cheias de afeto.
-                        Que sua experiência aqui floresça com sabor, saúde e consciência.
-                        É um prazer ter você conosco!
-                    </p>
-                </div>
-            </div>
             
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <p class="text-center">
-                        O nosso Restaurante Broto & Sabor oferece culinária vegana contemporânea, com pratos feitos a partir de
-                        ingredientes frescos e naturais. Nosso ambiente é casual e acolhedor, ideal para famílias, casais e quem deseja
-                        uma
-                        refeição tranquila em um espaço confortável.
-                    </p>
-                </div>
-            </div>
-
-
             <div class="row mt-5">
                 <div class="col-12">
                     <h2 class="h3 text-center text-success mb-4">⏰ Horário de Funcionamento</h2>
@@ -210,11 +189,6 @@
                     </tr>
                 </tbody>
             </table>
-
-            <p class="text-center text-muted mt-4">
-                <small>Consulte nosso menu completo na seção Cardápio.</small>
-            </p>
-
         </div>
     </section>
 
