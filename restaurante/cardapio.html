@@ -2,592 +2,569 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* ==================== Estilos Globais ==================== */
-        body,
-        a,
-        p,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        label {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
-        }
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-img-top {
+    /* Define uma altura e largura fixas para todas as imagens */
+    width: 300px;
+    height: 300px; 
+    
+    /* Faz a imagem cobrir o espaço definido, cortando o excesso
+       e mantendo a proporção (crucial para evitar distorção) */
+    object-fit: cover;
+    
+    /* Centraliza a parte visível da imagem */
+    //*object-position: center; 
+}
 
-        /* Cor de Fundo Verde Suave (Baseado em .mudarCor) */
-        .bg-verde-suave {
-            background-color: rgb(238, 238, 238) !important;
-        }
+/* Opcional, para garantir que as colunas ocupem a largura do contêiner */
+.card-wrapper {
+    display: flex;
+    justify-content: center; /* Centraliza o cartão dentro da coluna, se for menor */
+}
+        a {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
 
-        /* Cor de Fundo Branco */
-        .bg-branco {
-            background-color: white !important;
-        }
+        .mudarCor {
+            background-color: rgb(238, 238, 238) !important;
+        }
 
-        /* ==================== Estilos do Cardápio ==================== */
-        .card-img-top {
-            /* Define uma altura e largura fixas para todas as imagens (mantido do original) */
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 0.375rem 0.375rem 0 0; /* Mantém o arredondamento superior padrão do card */
-        }
+        h2 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+    </style>
 
-        .card-body {
-            /* Faz com que todos os corpos dos cards tenham a mesma altura mínima */
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* ==================== Estilos do Carrossel ==================== */
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: gray;
-            border-radius: 50%;
-            padding: 1.5rem;
-            opacity: 1; /* Garante que os ícones fiquem visíveis */
-        }
-
-        /* Posicionamento dos botões para ficarem fora da área do conteúdo (container) */
-        .carousel-control-prev {
-            left: -80px;
-        }
-
-        .carousel-control-next {
-            right: -80px;
-        }
-
-        /* Cor do Título da Seção no Padrão do Restaurante */
-        .section-title {
-            color: var(--bs-success); /* Cor verde forte */
-        }
-    </style>
-
-    <title>Restaurante - Cardápio</title>
+    <title>Restaurante - Broto & Sabor</title>
 </head>
 
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
-        <div class="container">
-            <a class="navbar-brand text-white" href="#">Broto & Sabor</a>
+    <!-- ================== NAVBAR ================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Broto & Sabor</a>
 
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
 
-            <div class="collapse navbar-collapse" id="menuNavbar">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-white" href="inicio.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="cardapio.html">Cardápio</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="sobre.html">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="reservas.html">Reservas</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="galeria.html">Galeria</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="contato.html">Fale Conosco</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="pedidos.html">Pedidos Online</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="promocoes.html">Promoções</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="inicio.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Fale Conosco</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos Online</a></li>
+                    <li class="nav-item"><a class="nav-link" href="promocoes.html">Promoções</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="cardapio" class="py-5">
+        <div class="container">
+            <h2 class="mb-3 text-bg-success text-center">Cardápio</h2>
+            <p>
+                O restaurante oferece uma seleção de pratos 100% veganos, preparados com ingredientes frescos, sazonais
+                e de origem vegetal. O foco está em refeições nutritivas e saborosas, incluindo opções como bowls,
+                saladas completas, massas, hambúrgueres veganos, pratos regionais reinterpretados sem ingredientes de
+                origem animal e sobremesas naturais.
+            </p>
 
 
-    <section id="cardapio-texto" class="py-5 bg-verde-suave">
-        <div class="container">
-            <h2 class="mb-3 section-title text-center display-5">Cardápio</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <p class="lead text-center">
-                        O restaurante oferece uma seleção de pratos 100% veganos, preparados com ingredientes frescos, sazonais
-                        e de origem vegetal. O foco está em refeições nutritivas e saborosas, incluindo opções como bowls,
-                        saladas completas, massas, hambúrgueres veganos, pratos regionais reinterpretados sem ingredientes de
-                        origem animal e sobremesas naturais.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- TODO: Criar estrutura para categorias (entradas, principais, sobremesas, bebidas) -->
+-------------------------------------------------------------------------------------------------------------------------------
+          <ul>
+              <li><h3>Entradas</h3></li>
 
-    <section id="cardapio-detalhes" class="py-5 bg-branco">
-        <div class="container">
+    <div class="position-relative">
 
-            <div class="mb-5">
-                <h3 class="section-title border-bottom pb-2 mb-4">🍽️ Entradas</h3>
-                <div class="position-relative">
-                    <div id="entradasCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/salada.jpg" alt="Salada Colorida">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Salada Colorida com Tahine Cítrico</h5>
-                                                    <h4 class="section-title"><strong>R$ 18,90</strong></h4>
-                                                    <p class="card-text">
-                                                        Uma salada fresca com mix de folhas da estação, legumes
-                                                        grelhados e molho de tahine com limão siciliano.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/kimchi-beterraba-artesanal-320x300.jpg" alt="Kimchi Artesanal">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Kimchi Artesanal de Beterraba</h5>
-                                                    <h4 class="section-title"><strong>R$ 12,50</strong></h4>
-                                                    <p class="card-text">
-                                                        Fermentado coreano picante feito com beterraba e rabanete.
-                                                        Rico em probióticos e sabor.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/receita-rissol-vegan-320x300.jpg" alt="Rissóis Assados">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Rissóis Assados de Palmito</h5>
-                                                    <h4 class="section-title"><strong>R$ 15,90</strong></h4>
-                                                    <p class="card-text">
-                                                        Duas unidades de rissóis assados com recheio cremoso de palmito e azeitonas.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/salsa-tomate-vegana.jpg" alt="Salsa de Morango">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Salsa de Morango Picante</h5>
-                                                    <h4 class="section-title"><strong>R$ 16,50</strong></h4>
-                                                    <p class="card-text">
-                                                        Salsa agridoce e refrescante com morango, tomate, coentro e toque de pimenta.
-                                                        Acompanha chips de milho.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div id="entradasCarousel" class="carousel slide" data-bs-ride="carousel">
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#entradasCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Anterior</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#entradasCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Próximo</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <div class="carousel-inner">
 
-            <div class="mb-5">
-                <h3 class="section-title border-bottom pb-2 mb-4">🍲 Pratos Principais</h3>
-                <div class="position-relative">
-                    <div id="principaisCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/strogonoff-vegano.jpg" alt="Strogonoff">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Strogonoff de Palmito e Cogumelos</h5>
-                                                    <h4 class="section-title"><strong>R$ 32,90</strong></h4>
-                                                    <p class="card-text">
-                                                        Clássico cremoso feito com creme de leite de castanha-de-caju,
-                                                        palmito fresco e mix de cogumelos. Acompanha arroz branco e batata palha vegana.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/risoto-de-legumes.webp" alt="Risoto">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Risoto Cremoso de Abóbora e Sálvia</h5>
-                                                    <h4 class="section-title"><strong>R$ 29,50</strong></h4>
-                                                    <p class="card-text">
-                                                        Arroz arbóreo cozido em caldo de legumes, abóbora cabotiá assada,
-                                                        toque de sálvia fresca e finalizado com azeite trufado.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/macarrao.jpg" alt="Espaguete">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Espaguete com Almôndegas de Lentilha</h5>
-                                                    <h4 class="section-title"><strong>R$ 27,80</strong></h4>
-                                                    <p class="card-text">
-                                                        Massa italiana integral servida com molho de tomate pelati e
-                                                        três almôndegas de lentilha e especiarias da casa.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/panqueca-vegana.jpg" alt="Panqueca">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Panqueca de Shitake com Queijo Cremoso</h5>
-                                                    <h4 class="section-title"><strong>R$ 31,90</strong></h4>
-                                                    <p class="card-text">
-                                                        Duas panquecas recheadas com shitake salteado e "queijo" cremoso vegano
-                                                        de mandioca, gratinadas com molho de tomate.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card w-100">
+                                <img class="card-img-top" src="../comidas/salada.jpg" alt="Card 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Salada Colorida com Tahine Cítrico</h5>
+                                    <h4><strong>R$ 18,90</strong></h4>
+                                    <p class="card-text">
+                                        Uma salada fresca com mix de folhas da estação, legumes 
+                                        grelhados e molho de tahine com limão siciliano.
+                                    </p>
+                                    <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                                </div>
+                            </div>
+                        </div>
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#principaisCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Anterior</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#principaisCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Próximo</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card w-100">
+                                <img class="card-img-top" src="../comidas/kimchi-beterraba-artesanal-320x300.jpg" alt="Card 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kimchi Artesanal de Beterraba</h5>
+                                    <h4><strong>R$ 12,50</strong></h4>
+                                    <p class="card-text">
+                                        Fermentado coreano picante feito com beterraba e rabanete. 
+                                        Rico em probióticos e sabor.
+                                    </p>
+                                    <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="mb-5">
-                <h3 class="section-title border-bottom pb-2 mb-4">🍰 Sobremesas</h3>
-                <div class="position-relative">
-                    <div id="sobremesasCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/biscoito-de-tahine.png" alt="Biscoitos">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Biscoitos de Tahine e Coco</h5>
-                                                    <h4 class="section-title"><strong>R$ 9,90</strong></h4>
-                                                    <p class="card-text">
-                                                        Três biscoitos macios feitos com tahine, coco ralado e um toque de limão.
-                                                        Sem glúten e adoçados com xilitol.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/quadrado.png" alt="Barra de Cereal">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Barra de Cereal Assada com Pistache</h5>
-                                                    <h4 class="section-title"><strong>R$ 11,50</strong></h4>
-                                                    <p class="card-text">
-                                                        Barra energética à base de aveia, sementes, frutas secas e
-                                                        pistache, assada e ligeiramente adoçada com melado.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/brownie.png" alt="Brownie">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Brownie Funcional de Cacau e Tâmaras</h5>
-                                                    <h4 class="section-title"><strong>R$ 16,90</strong></h4>
-                                                    <p class="card-text">
-                                                        Brownie denso e úmido feito com cacau 70% e adoçado naturalmente com
-                                                        pasta de tâmara. Servido morno.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/sorvete.png" alt="Sorvete">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Taça de Sorvete de Manga e Maracujá</h5>
-                                                    <h4 class="section-title"><strong>R$ 14,80</strong></h4>
-                                                    <p class="card-text">
-                                                        Sorvete artesanal cremoso à base de leite de coco, com sabores
-                                                        naturais de manga e maracujá. (120g)
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card w-100">
+                                <img class="card-img-top" src="../comidas/receita-rissol-vegan-320x300.jpg" alt="Card 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rissóis Assados de Palmito</h5>
+                                    <h4><strong>R$ 15,90</strong></h4>
+                                    <p class="card-text">
+                                        Duas unidades de rissóis assados com recheio cremoso de palmito e azeitonas.
+                                    </p>
+                                    <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                                </div>
+                            </div>
+                        </div>
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#sobremesasCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Anterior</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#sobremesasCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Próximo</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card w-100">
+                                <img class="card-img-top" src="../comidas/salsa-tomate-vegana.jpg" alt="Card 4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Salsa de Morango Picante</h5>
+                                    <h4><strong>R$ 16,50</strong></h4>
+                                    <p class="card-text">
+                                        Salsa agridoce e refrescante com morango, tomate, coentro e toque de pimenta. 
+                                        Acompanha chips de milho.
+                                    </p>
+                                    <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="mb-5">
-                <h3 class="section-title border-bottom pb-2 mb-4">🥤 Bebidas</h3>
-                <div class="position-relative">
-                    <div id="bebidasCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/agua.jpg" alt="Água de Coco">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Água de Coco Natural</h5>
-                                                    <h4 class="section-title"><strong>R$ 8,50</strong></h4>
-                                                    <p class="card-text">
-                                                        Água de coco verde, fresca e gelada, servida em copo de 300ml.
-                                                        Hidratação leve e refrescante.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/cafe.jpg" alt="Café Especial">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Café Especial Coado</h5>
-                                                    <h4 class="section-title"><strong>R$ 6,00</strong></h4>
-                                                    <p class="card-text">
-                                                        Grãos de torra média, 100% arábica. Servido preto (expresso, coado
-                                                        ou prensa francesa).
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/cha.jpg" alt="Chá">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Chá de Gengibre e Cúrcuma</h5>
-                                                    <h4 class="section-title"><strong>R$ 7,50</strong></h4>
-                                                    <p class="card-text">
-                                                        Chá quente ou gelado (infusão natural) com gengibre, cúrcuma e
-                                                        limão. Sem adição de açúcar.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/leites.jpg" alt="Leite Dourado">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Leite Dourado (Golden Milk)</h5>
-                                                    <h4 class="section-title"><strong>R$ 11,00</strong></h4>
-                                                    <p class="card-text">
-                                                        Bebida quente e reconfortante feita com leite vegetal (coco ou amêndoas),
-                                                        cúrcuma, gengibre e especiarias.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            </div>
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#bebidasCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Anterior</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#bebidasCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Próximo</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#entradasCarousel"
+                data-bs-slide="prev" style="left: -80px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                    style="background-color: gray; border-radius: 50%; padding: 1.5rem;"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#entradasCarousel"
+                data-bs-slide="next" style="right: -80px;">
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                    style="background-color: gray; border-radius: 50%; padding: 1.5rem;"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
 
-            <div class="mb-5">
-                <h3 class="section-title border-bottom pb-2 mb-4">⭐ Especiais do Dia</h3>
-                <div class="position-relative">
-                    <div id="especiaisCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/couve.webp" alt="Couve-Flor">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Couve-Flor Assada com Romesco e Tahine</h5>
-                                                    <h4 class="section-title"><strong>R$ 44,90</strong></h4>
-                                                    <p class="card-text">
-                                                        Couve-flor inteira marinada em especiarias e assada até dourar,
-                                                        servida com molho Romesco e um toque de creme de tahine com ervas.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/aperitivo.jpg" alt="Crostini">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Crostini de Duxelles de Cogumelos Trufados</h5>
-                                                    <h4 class="section-title"><strong>R$ 22,50</strong></h4>
-                                                    <p class="card-text">
-                                                        Pão artesanal crocante (crostini) coberto com uma pasta rica de
-                                                        cogumelos (Duxelles) e azeite trufado.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/torta.jpg" alt="Torta">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Torta Cremosa de Chocolate e Caramelo Salgado</h5>
-                                                    <h4 class="section-title"><strong>R$ 19,90</strong></h4>
-                                                    <p class="card-text">
-                                                        Fatia de torta sem glúten com base de avelã, recheio de ganache de
-                                                        chocolate e camada de caramelo salgado de tâmara.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 mb-4">
-                                        <div class="card w-100 h-100">
-                                            <img class="card-img-top" src="../comidas/bebida.webp" alt="Margarita">
-                                            <div class="card-body">
-                                                <div>
-                                                    <h5 class="card-title">Margarita de Cranberry com Especiarias</h5>
-                                                    <h4 class="section-title"><strong>R$ 28,00</strong></h4>
-                                                    <p class="card-text">
-                                                        Coquetel refrescante (versão sem álcool disponível) com laranja,
-                                                        cranberry, canela e borda de açúcar e sal.
-                                                    </p>
-                                                </div>
-                                                <a href="#" class="btn btn-success mt-2">Adicionar a entrega</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    </div>
+---------------------------------------------------------------------------------------------------------------------------------------
+                <li><h3>Pratos principais</h3></li>
+<div class="position-relative">
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#especiaisCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Anterior</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#especiaisCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Próximo</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <div id="principaisCarousel" class="carousel slide" data-bs-ride="carousel">
 
-        </div>
-    </section>
+        <div class="carousel-inner">
 
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/strogonoff-vegano.jpg" alt="Card 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Strogonoff de Palmito e Cogumelos</h5>
+                                <h4><strong>R$ 32,90</strong></h4>
+                                <p class="card-text">
+                                    Clássico cremoso feito com creme de leite de castanha-de-caju, 
+                                    palmito fresco e mix de cogumelos. Acompanha arroz branco e batata palha vegana.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
 
-    <footer class="bg-success text-white text-center py-3">
-        <small>© 2025 Broto & Sabor - Todos os direitos reservados.</small>
-    </footer>
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/risoto-de-legumes.webp" alt="Card 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Risoto Cremoso de Abóbora e Sálvia</h5>
+                                <h4><strong>R$ 29,50</strong></h4>
+                                <p class="card-text">
+                                    Arroz arbóreo cozido em caldo de legumes, abóbora cabotiá assada, 
+                                    toque de sálvia fresca e finalizado com azeite trufado.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/macarrao.jpg" alt="Card 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Espaguete com Almôndegas de Lentilha</h5>
+                                <h4><strong>R$ 27,80</strong></h4>
+                                <p class="card-text">
+                                    Massa italiana integral servida com molho de tomate pelati e 
+                                    três almôndegas de lentilha e especiarias da casa.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/panqueca-vegana.jpg" alt="Card 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Panqueca de Shitake com Queijo Cremoso</h5>
+                                <h4><strong>R$ 31,90</strong></h4>
+                                <p class="card-text">
+                                    Duas panquecas recheadas com shitake salteado e "queijo" cremoso vegano 
+                                    de mandioca, gratinadas com molho de tomate.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#principaisCarousel"
+            data-bs-slide="prev" style="left: -80px;">
+            <span class="carousel-control-prev-icon" aria-hidden="true"
+                style="background-color: gray; border-radius: 50%; padding: 1.5rem;"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#principaisCarousel"
+            data-bs-slide="next" style="right: -80px;">
+            <span class="carousel-control-next-icon" aria-hidden="true"
+                style="background-color: gray; border-radius: 50%; padding: 1.5rem;"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+</div>
+
+----------------------------------------------------------------------------------------------------------------------
+                <li><h3>Sobremesas</h3></li>
+<div class="position-relative">
+
+    <div id="sobremesasCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/biscoito-de-tahine.png" alt="Card 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Biscoitos de Tahine e Coco</h5>
+                                <h4><strong>R$ 9,90</strong></h4>
+                                <p class="card-text">
+                                    Três biscoitos macios feitos com tahine, coco ralado e um toque de limão. 
+                                    Sem glúten e adoçados com xilitol.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/quadrado.png" alt="Card 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Barra de Cereal Assada com Pistache</h5>
+                                <h4><strong>R$ 11,50</strong></h4>
+                                <p class="card-text">
+                                    Barra energética à base de aveia, sementes, frutas secas e 
+                                    pistache, assada e ligeiramente adoçada com melado.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/brownie.png" alt="Card 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Brownie Funcional de Cacau e Tâmaras</h5>
+                                <h4><strong>R$ 16,90</strong></h4>
+                                <p class="card-text">
+                                    Brownie denso e úmido feito com cacau 70% e adoçado naturalmente com 
+                                    pasta de tâmara. Servido morno.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/sorvete.png" alt="Card 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Taça de Sorvete de Manga e Maracujá</h5>
+                                <h4><strong>R$ 14,80</strong></h4>
+                                <p class="card-text">
+                                    Sorvete artesanal cremoso à base de leite de coco, com sabores 
+                                    naturais de manga e maracujá. (120g)
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#sobremesasCarousel"
+            data-bs-slide="prev" style="left: -80px;">
+            <span class="carousel-control-prev-icon" aria-hidden="true"
+                style="background-color: gray; border-radius: 50%; padding: 1.5rem;"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#sobremesasCarousel"
+            data-bs-slide="next" style="right: -80px;">
+            <span class="carousel-control-next-icon" aria-hidden="true"
+                style="background-color: gray; border-radius: 50%; padding: 1.5rem;"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+</div>
+              --------------------------------------
+              <li><h3>Bebidas</h3></li>
+<div class="position-relative">
+
+    <div id="bebidasCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/agua.jpg" alt="Card 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Água de Coco Natural</h5>
+                                <h4><strong>R$ 8,50</strong></h4>
+                                <p class="card-text">
+                                    Água de coco verde, fresca e gelada, servida em copo de 300ml.
+                                    Hidratação leve e refrescante.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/cafe.jpg" alt="Card 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Café Especial Coado</h5>
+                                <h4><strong>R$ 6,00</strong></h4>
+                                <p class="card-text">
+                                    Grãos de torra média, 100% arábica. Servido preto (expresso, coado 
+                                    ou prensa francesa).
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/cha.jpg" alt="Card 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Chá de Gengibre e Cúrcuma</h5>
+                                <h4><strong>R$ 7,50</strong></h4>
+                                <p class="card-text">
+                                    Chá quente ou gelado (infusão natural) com gengibre, cúrcuma e 
+                                    limão. Sem adição de açúcar.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/leites.jpg" alt="Card 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Leite Dourado (Golden Milk)</h5>
+                                <h4><strong>R$ 11,00</strong></h4>
+                                <p class="card-text">
+                                    Bebida quente e reconfortante feita com leite vegetal (coco ou amêndoas), 
+                                    cúrcuma, gengibre e especiarias.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#bebidasCarousel"
+            data-bs-slide="prev" style="left: -80px;">
+            <span class="carousel-control-prev-icon" aria-hidden="true"
+                style="background-color: gray; border-radius: 50%; padding: 1.5rem;"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bebidasCarousel"
+            data-bs-slide="next" style="right: -80px;">
+            <span class="carousel-control-next-icon" aria-hidden="true"
+                style="background-color: gray; border-radius: 50%; padding: 1.5rem;"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+              -------------------------------------------------------------------------------------------------------
+                </div>
+<li><h3>Especiais do Dia</h3></li>
+<div class="position-relative">
+
+    <div id="especiaisCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/couve.webp" alt="Card 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Couve-Flor Assada com Romesco e Tahine</h5>
+                                <h4><strong>R$ 44,90</strong></h4>
+                                <p class="card-text">
+                                    Couve-flor inteira marinada em especiarias e assada até dourar, 
+                                    servida com molho Romesco e um toque de creme de tahine com ervas.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/aperitivo.jpg" alt="Card 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Crostini de Duxelles de Cogumelos Trufados</h5>
+                                <h4><strong>R$ 22,50</strong></h4>
+                                <p class="card-text">
+                                    Pão artesanal crocante (crostini) coberto com uma pasta rica de 
+                                    cogumelos (Duxelles) e azeite trufado.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/torta.jpg" alt="Card 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Torta Cremosa de Chocolate e Caramelo Salgado</h5>
+                                <h4><strong>R$ 19,90</strong></h4>
+                                <p class="card-text">
+                                    Fatia de torta sem glúten com base de avelã, recheio de ganache de 
+                                    chocolate e camada de caramelo salgado de tâmara.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <div class="card w-100">
+                            <img class="card-img-top" src="../comidas/bebida.webp" alt="Card 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Margarita de Cranberry com Especiarias</h5>
+                                <h4><strong>R$ 28,00</strong></h4>
+                                <p class="card-text">
+                                    Coquetel refrescante (versão sem álcool disponível) com laranja, 
+                                    cranberry, canela e borda de açúcar e sal.
+                                </p>
+                                <a href="#" class="btn btn-success">Adicionar a entrega</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#especiaisCarousel"
+            data-bs-slide="prev" style="left: -80px;">
+            <span class="carousel-control-prev-icon" aria-hidden="true"
+                style="background-color: gray; border-radius: 50%; padding: 1.5rem;"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#especiaisCarousel"
+            data-bs-slide="next" style="right: -80px;">
+            <span class="carousel-control-next-icon" aria-hidden="true"
+                style="background-color: gray; border-radius: 50%; padding: 1.5rem;"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+</div>
+        </div>
+</ul>
+            <p class="mt-3">
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-success text-white text-center py-3">
+        <small>© 2025 Broto & Sabor - Todos os direitos reservados.</small>
+    </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
 </body>
 
 </html>
