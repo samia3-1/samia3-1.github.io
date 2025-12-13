@@ -11,8 +11,10 @@
     <style>
         /* Paleta de Cores Veganas */
         :root {
-            --vegan-green: #38761D; /* Verde escuro para títulos e fundo principal (navbar/footer) */
-            --light-vegan-green: #E6F4EA; /* Verde claro para acentuação (ex: accordion) */
+            --vegan-green: #38761D;
+            /* Verde escuro para títulos e fundo principal (navbar/footer) */
+            --light-vegan-green: #E6F4EA;
+            /* Verde claro para acentuação (ex: accordion) */
         }
 
         a,
@@ -21,9 +23,10 @@
         label {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
-        
+
         /* Aplica o verde escuro aos títulos */
-        h2, h3 {
+        h2,
+        h3 {
             color: var(--vegan-green);
         }
 
@@ -45,7 +48,8 @@
 
         /* Estilo quando o item do accordion está aberto (opcional) */
         .accordion-button:not(.collapsed) {
-            background-color: #D4E9D2 !important; /* Um tom um pouco mais escuro ao abrir */
+            background-color: #D4E9D2 !important;
+            /* Um ton um pouco mais escuro ao abrir */
             color: var(--vegan-green) !important;
             box-shadow: none;
         }
@@ -86,58 +90,73 @@
             </div>
         </div>
     </nav>
-    <section id="reservas" class="py-5">
-        <div class="container">
-            <h2 class="mb-3">Reservas</h2>
-
-
-            <h3 class="h5 mt-3">Formulário de Reserva</h3>
-
-            <form>
-                <div class="mb-3">
-                    <label for="nomeInput" class="form-label">Nome:</label>
-                    <input type='text' class="form-control" id="nomeInput" placeholder="Seu nome completo" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="emailInput" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="emailInput" placeholder="nome@exemplo.com" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="telefoneInput" class="form-label">Telefone:</label>
-                    <input type='tel' class="form-control" id="telefoneInput" placeholder='(xx) 9xxxx-xxxx'>
-                </div>
-
-                <div class="mb-3">
-                    <label for="qtdPessoasSelect" class="form-label">Quantidade de Pessoas:</label>
-                    <select class="form-select" id="qtdPessoasSelect" required>
-                        <option selected disabled value="">Selecione...</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6 (Para grupos maiores, consulte a política)</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="dataInput" class="form-label">Data:</label>
-                    <input type='date' class='form-control' id="dataInput" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="horarioInput" class="form-label">Horário:</label>
-                    <input type="time" class="form-control" id="horarioInput" required>
-                </div>
-
-                <button type="submit" class="btn btn-success mt-3">Reservar Mesa</button>
-            </form>
-            </div>
-    </section>
     
-    <div class="container mb-5"> <h3 class="h5 mt-3">Política de Reservas</h3>
+    <section id="reservas" class="py-5 mudarCor">
+        <div class="container">
+            <h2 class="mb-5 text-center">✨ Reserve Sua Mesa no Broto & Sabor ✨</h2>
+
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-success text-white">
+                    <h3 class="h4 m-0 text-white">Preencha os dados da sua reserva</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="nomeInput" class="form-label">Nome:</label>
+                                <input type='text' class="form-control" id="nomeInput" placeholder="Seu nome completo" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="emailInput" class="form-label">Email:</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="nome@exemplo.com" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="telefoneInput" class="form-label">Telefone:</label>
+                                <input type='tel' class="form-control" id="telefoneInput" placeholder='(xx) 9xxxx-xxxx'>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="qtdPessoasSelect" class="form-label">Quantidade de Pessoas:</label>
+                                <select class="form-select" id="qtdPessoasSelect" required>
+                                    <option selected disabled value="">Selecione...</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option value="6plus">6 ou mais (Para grupos maiores, consulte a política)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label for="dataInput" class="form-label">Data da Reserva:</label>
+                                <input type='date' class='form-control' id="dataInput" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="horarioInput" class="form-label">Horário Desejado:</label>
+                                <input type="time" class="form-control" id="horarioInput" required>
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success btn-lg mt-3">
+                                ✅ Confirmar Reserva
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <p class="text-center mt-3 text-muted">Aguarde a confirmação por email ou telefone.</p>
+        </div>
+    </section>
+
+    <div class="container mb-5">
+        <h3 class="h5 mt-3">Política de Reservas</h3>
 
         <div class="accordion" id="accordionExample">
 
@@ -233,6 +252,7 @@
 
         </div>
     </div>
+    
     <footer class="bg-success text-white text-center py-3">
         <small>© 2025 Broto & Sabor - Todos os direitos reservados.</small>
     </footer>
