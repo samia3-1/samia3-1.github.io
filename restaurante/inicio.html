@@ -9,78 +9,85 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* Manutenção do estilo de imagem para o carousel */
+        /* Manter a fonte para a identidade do site */
+        a,
+        h1,
+        h2,
+        h3,
+        label {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        /* Ajustes do Carrossel no topo */
+        .carousel-top-section {
+            padding: 0; /* Remove padding na seção para garantir largura total */
+            margin: 0;
+            background-color: var(--bs-success-bg-subtle); /* Fundo verde suave no topo */
+        }
+
+        .carousel-top-section .carousel-inner,
+        .carousel-top-section img {
+            border-radius: 0 !important; /* Remove o arredondamento */
+        }
+
+        /* Ajuste da imagem para ocupar o espaço do carrossel */
         .carousel-item img {
-            height: 400px; /* Aumentei a altura para dar mais impacto ao carousel */
+            height: 450px; /* Aumentei ligeiramente para maior impacto visual */
             width: 100%;
             object-fit: cover;
-            border-radius: 20px;
+            /* O border-radius será 0 graças ao estilo acima */
         }
 
-        .mudarCor {
-            background-color: rgb(238, 238, 238) !important;
+        /* Estilo da área de Conteúdo Principal (Texto e Tabela) - Fundo Branco */
+        .main-content-area {
+            background-color: white !important; /* Fundo branco para contraste */
         }
 
+        /* Os títulos agora usam a cor 'success' do Bootstrap */
+        h1,
+        h2 {
+            color: var(--bs-success);
+        }
+
+        /* Estilo para a classe customizada de fundo verde sutil (bg-success-subtle) */
+        .bg-success-subtle {
+            background-color: var(--bs-success-bg-subtle) !important;
+        }
+
+
+        /* Estilo da Tabela (Mantido o design customizado original) */
         table {
-            /* Garante que as bordas de células adjacentes se unam */
             border-collapse: collapse;
-            /* Alterado: Define a largura da tabela para 80% e a centraliza */
             width: 80%;
             margin: 20px auto;
-            /* Fonte mais limpa para o corpo do texto */
             font-family: Arial, sans-serif;
-            /* Sombra suave para dar profundidade */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            /* Cantos arredondados */
             overflow: hidden;
-            /* Garante que os cantos arredondados sejam respeitados */
         }
 
-        /* Estilo para as células do cabeçalho (th) e do corpo (td) */
         th,
         td {
             border: 1px solid #dddddd;
-            /* Borda cinza clara para separação */
             padding: 12px 15px;
-            /* Espaçamento interno */
             text-align: center;
-            /* Centraliza o texto nas células */
         }
 
-        /* Estilo especial para o cabeçalho da tabela */
         thead th {
-            /* Alterado: Cor de fundo bege/verde claro que você definiu */
             background-color: #a7d887;
             color: #333333;
-            /* Texto escuro para contrastar com o bege */
             text-transform: uppercase;
-            /* Texto em caixa alta */
             letter-spacing: 1px;
             font-size: 1.1em;
         }
 
-        /* Estilo para linhas pares (zebra striping) para melhor legibilidade */
         tbody tr:nth-child(even) {
             background-color: #d1d1d1;
-            /* Fundo cinza bem claro para linhas pares */
         }
 
-        /* Efeito de hover (passar o mouse) para interação */
         tbody tr:hover {
             background-color: #c5ddba;
-            /* Fundo ligeiramente mais escuro ao passar o mouse */
             cursor: default;
-            /* Mantém o cursor padrão */
-        }
-
-        h1,
-        h2 {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-        }
-
-        a {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
     </style>
 
@@ -93,7 +100,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Broto & Sabor</a>
+            <a class="navbar-brand text-white" href="#">Broto & Sabor</a>
 
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
@@ -103,35 +110,23 @@
 
             <div class="collapse navbar-collapse" id="menuNavbar">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="inicio.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contato.html">Fale Conosco</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos Online</a></li>
-                    <li class="nav-item"><a class="nav-link" href="promocoes.html">Promoções</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="inicio.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="cardapio.html">Cardápio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="sobre.html">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="reservas.html">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="galeria.html">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contato.html">Fale Conosco</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="pedidos.html">Pedidos Online</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="promocoes.html">Promoções</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
 
-    <section id="inicio" class="bg-light py-5 mudarCor">
-        <div class="container">
-            <h1 class="display-4 text-center text-success fw-bold mb-4">🌱 Broto & Sabor: Culinária Vegana & Saudável</h1>
-            
-            <div class="row justify-content-center">
-                <div class="col-md-10">
-                    <p class="lead text-center mb-5">
-                        Bem-vindo ao Broto e Sabor! Aqui, cada prato nasce do respeito à natureza e do desejo de oferecer uma experiência leve, saborosa e cheia de vida. Nosso compromisso é transformar ingredientes frescos e plant-based em refeições criativas, nutritivas e cheias de afeto.
-                        Que sua experiência aqui floresça com sabor, saúde e consciência. É um prazer ter você conosco!
-                    </p>
-                </div>
-            </div>
-
-
-            <div id="carouselDestaque" class="carousel slide mb-5" data-bs-ride="carousel">
+    <section id="carousel" class="py-5 carousel-top-section bg-success-subtle">
+        <div class="container-fluid">
+            <div id="carouselDestaque" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="../comidas/risoto-de-legumes.webp" class="d-block w-100" alt="Risoto de Legumes Vegano">
@@ -155,13 +150,44 @@
                     <span class="visually-hidden">Próximo</span>
                 </button>
             </div>
+        </div>
+    </section>
+
+    <section id="inicio" class="py-5 main-content-area">
+        <div class="container">
+            <h1 class="display-4 text-center text-success fw-bold mb-4">🌱 Broto & Sabor: Culinária Vegana & Saudável</h1>
+
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <p class="lead text-center mb-5">
+                        Bem-vindo ao Broto e Sabor!
+                        Aqui, cada prato nasce do respeito à natureza e do desejo de oferecer uma experiência leve, saborosa e cheia de
+                        vida. Nosso compromisso é transformar ingredientes frescos e plant-based em refeições criativas, nutritivas e
+                        cheias de afeto.
+                        Que sua experiência aqui floresça com sabor, saúde e consciência.
+                        É um prazer ter você conosco!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <p class="text-center">
+                        O nosso Restaurante Broto & Sabor oferece culinária vegana contemporânea, com pratos feitos a partir de
+                        ingredientes frescos e naturais. Nosso ambiente é casual e acolhedor, ideal para famílias, casais e quem deseja
+                        uma
+                        refeição tranquila em um espaço confortável.
+                    </p>
+                </div>
+            </div>
+
 
             <div class="row mt-5">
                 <div class="col-12">
                     <h2 class="h3 text-center text-success mb-4">⏰ Horário de Funcionamento</h2>
                 </div>
             </div>
-            
+
             <table>
                 <thead>
                     <tr>
@@ -184,11 +210,11 @@
                     </tr>
                 </tbody>
             </table>
-            
+
             <p class="text-center text-muted mt-4">
                 <small>Consulte nosso menu completo na seção Cardápio.</small>
             </p>
-            
+
         </div>
     </section>
 
