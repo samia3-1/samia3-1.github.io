@@ -7,40 +7,26 @@
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
-        /* Manter a fonte para a identidade do site */
-        a,
-        h2,
-        h3,
-        label {
+        /* Estilos CSS do projeto */
+        a {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
-        /* Os títulos agora usam a cor 'success' do Bootstrap */
-        h2,
-        h3 {
+        .mudarCor {
+            background-color: rgb(238, 238, 238) !important;
+        }
+
+        /* Estilos consolidados para consistência */
+        h2, h3, h4, h5, .form-label {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+        }
+
+        .section-title {
             color: var(--bs-success);
-        }
-
-        /* Configura o botão do Accordion para usar o verde de sucesso */
-        .accordion-button {
-            background-color: var(--bs-light) !important; /* Fundo mais claro */
-            color: var(--bs-success) !important; /* Texto verde de sucesso */
             font-weight: bold;
-        }
-
-        .accordion-button:not(.collapsed) {
-            /* Fundo sutil ao abrir, para contraste */
-            background-color: var(--bs-success-bg-subtle) !important;
-            color: var(--bs-success) !important;
-            box-shadow: none;
-        }
-
-        .accordion-button:focus {
-            /* Foco com a cor success */
-            border-color: var(--bs-success);
-            box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.25);
         }
     </style>
 
@@ -50,7 +36,7 @@
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-success sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
         <div class="container">
             <a class="navbar-brand text-white" href="#">Broto & Sabor</a>
 
@@ -65,7 +51,7 @@
                     <li class="nav-item"><a class="nav-link text-white" href="inicio.html">Início</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="cardapio.html">Cardápio</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="sobre.html">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="reservas.html">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="reservas.html">Reservas</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="galeria.html">Galeria</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="contato.html">Fale Conosco</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="pedidos.html">Pedidos Online</a></li>
@@ -75,169 +61,95 @@
         </div>
     </nav>
 
-    <section id="reservas" class="py-5 bg-success-subtle">
+
+    <section id="reservas" class="py-5 mudarCor">
         <div class="container">
-            <h2 class="mb-5 text-center">✨ Reserve Sua Mesa no Broto & Sabor ✨</h2>
+            <h2 class="mb-5 section-title text-center display-5">🗓️ Faça sua Reserva</h2>
 
-            <div class="card shadow-lg border-0">
-                <div class="card-header bg-success text-white">
-                    <h3 class="h4 m-0 text-white">Preencha os dados da sua reserva</h3>
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="nomeInput" class="form-label">Nome:</label>
-                                <input type='text' class="form-control" id="nomeInput" placeholder="Seu nome completo"
-                                    required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="emailInput" class="form-label">Email:</label>
-                                <input type="email" class="form-control" id="emailInput" placeholder="nome@exemplo.com"
-                                    required>
-                            </div>
-                        </div>
+            <p class="lead text-center mb-5 text-muted">
+                Reserve sua mesa no Broto & Sabor com antecedência para garantir seu lugar. Preencha o formulário abaixo e entraremos em contato para confirmação.
+            </p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form class="p-4 border rounded shadow-lg bg-white">
 
                         <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="telefoneInput" class="form-label">Telefone:</label>
-                                <input type='tel' class="form-control" id="telefoneInput" placeholder='(xx) 9xxxx-xxxx'>
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="nomeReserva" class="form-label">
+                                    <i class="bi bi-person-fill text-success"></i> Nome Completo
+                                </label>
+                                <input type="text" class="form-control" id="nomeReserva" placeholder="Seu nome" required>
                             </div>
+
                             <div class="col-md-6">
-                                <label for="qtdPessoasSelect" class="form-label">Quantidade de Pessoas:</label>
-                                <select class="form-select" id="qtdPessoasSelect" required>
-                                    <option selected disabled value="">Selecione...</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option value="6plus">6 ou mais (Para grupos maiores, consulte a política)</option>
-                                </select>
+                                <label for="telefoneReserva" class="form-label">
+                                    <i class="bi bi-whatsapp text-success"></i> Telefone / WhatsApp
+                                </label>
+                                <input type="tel" class="form-control" id="telefoneReserva" placeholder="(82) 9xxxx-xxxx" required>
                             </div>
                         </div>
 
-                        <div class="row mb-4">
-                            <div class="col-md-6">
-                                <label for="dataInput" class="form-label">Data da Reserva:</label>
-                                <input type='date' class='form-control' id="dataInput" required>
+                        <div class="row mb-3">
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <label for="dataReserva" class="form-label">
+                                    <i class="bi bi-calendar-check-fill text-success"></i> Data
+                                </label>
+                                <input type="date" class="form-control" id="dataReserva" required>
                             </div>
-                            <div class="col-md-6">
-                                <label for="horarioInput" class="form-label">Horário Desejado:</label>
-                                <input type="time" class="form-control" id="horarioInput" required>
+
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <label for="horaReserva" class="form-label">
+                                    <i class="bi bi-clock-fill text-success"></i> Horário
+                                </label>
+                                <input type="time" class="form-control" id="horaReserva" min="11:00" max="21:00" step="1800" required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="pessoasReserva" class="form-label">
+                                    <i class="bi bi-people-fill text-success"></i> Pessoas
+                                </label>
+                                <input type="number" class="form-control" id="pessoasReserva" min="1" max="10" placeholder="Ex: 2" required>
                             </div>
                         </div>
 
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-success btn-lg mt-3">
-                                ✅ Confirmar Reserva
-                            </button>
+                        <div class="mb-4">
+                            <label for="observacoesReserva" class="form-label">
+                                <i class="bi bi-chat-left-text-fill text-success"></i> Preferências / Observações
+                            </label>
+                            <textarea class="form-control" id="observacoesReserva" rows="3" placeholder="Ex: Cadeira de bebê, mesa próxima à janela, alergias."></textarea>
                         </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" value="" id="termosReserva" required>
+                            <label class="form-check-label text-muted" for="termosReserva">
+                                Concordo que a reserva será confirmada apenas após contato telefônico.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-2">
+                            <i class="bi bi-send-fill me-2"></i> Solicitar Reserva
+                        </button>
 
                     </form>
                 </div>
             </div>
-            <p class="text-center mt-3 text-muted">Aguarde a confirmação por email ou telefone.</p>
+            
+            <hr class="my-5">
+
+            <div class="text-center">
+                <h3 class="h4 section-title">Horários de Atendimento para Reservas</h3>
+                <p class="text-muted">
+                    <i class="bi bi-clock-fill text-success"></i> Segunda a Sexta: **11h às 15h / 18h às 22h**<br>
+                    <i class="bi bi-clock-fill text-success"></i> Sábado: **11h às 22h**<br>
+                    <i class="bi bi-clock-fill text-success"></i> Domingo: **11h às 16h**
+                </p>
+            </div>
         </div>
     </section>
 
-    <div class="container mb-5">
-        <h3 class="h5 mt-3">Política de Reservas</h3>
 
-        <div class="accordion" id="accordionExample">
 
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        1. Como Fazer Sua Reserva
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>Reservas podem ser realizadas pelo site, telefone, WhatsApp ou redes sociais
-                            oficiais</strong>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        2. Horário de Tolerância
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>Trabalhamos com 15 minutos de tolerância após o horário marcado.
-                            Após esse período, a mesa pode ser liberada para outros clientes.</strong>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        3. Cancelamentos e Alterações
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>Cancelamentos podem ser feitos até 2 horas antes.
-                            Alterações no horário ou número de pessoas devem ser comunicadas com
-                            antecedência.</strong>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        4. Reservas para Grupos
-                    </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>Grupos acima de 8 pessoas devem reservar com no mínimo 24 horas de antecedência.
-                            Pode ser solicitado pré-pagamento simbólico, revertido em consumo.</strong>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        5. Sustentabilidade
-                    </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>Recomendamos avisar em caso de cancelamento para evitar desperdício de ingredientes.
-                            Alimentos externos devem ser confirmados como 100% veganos.</strong>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        6. Tempo de Permanência
-                    </button>
-                </h2>
-                <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>Em dias de alta demanda, o tempo pode ser limitado a 1h30 – 2h por mesa.</strong>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
     <footer class="bg-success text-white text-center py-3">
         <small>© 2025 Broto & Sabor - Todos os direitos reservados.</small>
