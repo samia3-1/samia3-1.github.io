@@ -48,15 +48,25 @@
             padding: 1.5rem;
         }
         
-        /* Estilização das abas de navegação de categoria */
-        .nav-link.active.bg-success {
-            color: white !important;
-            border-bottom: 3px solid var(--bs-warning);
-        }
+        /* === CORREÇÃO DA NAVEGAÇÃO POR ABAS (TABS) === */
+
+        /* Estilo para o link normal (não ativo) */
         .nav-link {
-            color: var(--bs-success) !important;
+            background-color: var(--bs-success); /* Fundo verde para todos */
+            color: white !important; /* Texto BRANCO para ser visível em todos */
             font-weight: bold;
             transition: all 0.3s ease;
+            margin: 0 5px; /* Espaçamento entre os botões */
+            border-radius: 5px 5px 0 0; /* Bordas arredondadas no topo */
+            border: none;
+        }
+
+        /* Estilo para o link ATIVO (o que está sendo visualizado) */
+        .nav-link.active {
+            background-color: white !important; /* Fundo branco para destacar */
+            color: var(--bs-success) !important; /* Texto verde sobre o fundo branco */
+            border-bottom: 3px solid var(--bs-warning) !important; /* Linha de destaque amarela */
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Sombra suave para levantar a aba */
         }
     </style>
 
@@ -102,27 +112,27 @@
 
             <ul class="nav nav-tabs justify-content-center border-0 mb-4" id="cardapioTabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active bg-success text-white" id="entradas-tab" data-bs-toggle="tab" data-bs-target="#entradas" type="button" role="tab" aria-controls="entradas" aria-selected="true">
+                    <button class="nav-link active" id="entradas-tab" data-bs-toggle="tab" data-bs-target="#entradas" type="button" role="tab" aria-controls="entradas" aria-selected="true">
                         <i class="bi bi-star-fill me-1"></i> Entradas
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link bg-success" id="principais-tab" data-bs-toggle="tab" data-bs-target="#principais" type="button" role="tab" aria-controls="principais" aria-selected="false">
+                    <button class="nav-link" id="principais-tab" data-bs-toggle="tab" data-bs-target="#principais" type="button" role="tab" aria-controls="principais" aria-selected="false">
                         <i class="bi bi-cup-hot-fill me-1"></i> Pratos Principais
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link bg-success" id="sobremesas-tab" data-bs-toggle="tab" data-bs-target="#sobremesas" type="button" role="tab" aria-controls="sobremesas" aria-selected="false">
+                    <button class="nav-link" id="sobremesas-tab" data-bs-toggle="tab" data-bs-target="#sobremesas" type="button" role="tab" aria-controls="sobremesas" aria-selected="false">
                         <i class="bi bi-balloon-heart-fill me-1"></i> Sobremesas
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link bg-success" id="bebidas-tab" data-bs-toggle="tab" data-bs-target="#bebidas" type="button" role="tab" aria-controls="bebidas" aria-selected="false">
+                    <button class="nav-link" id="bebidas-tab" data-bs-toggle="tab" data-bs-target="#bebidas" type="button" role="tab" aria-controls="bebidas" aria-selected="false">
                         <i class="bi bi-cup-straw me-1"></i> Bebidas
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link bg-success" id="especiais-tab" data-bs-toggle="tab" data-bs-target="#especiais" type="button" role="tab" aria-controls="especiais" aria-selected="false">
+                    <button class="nav-link" id="especiais-tab" data-bs-toggle="tab" data-bs-target="#especiais" type="button" role="tab" aria-controls="especiais" aria-selected="false">
                         <i class="bi bi-tags-fill me-1"></i> Especiais do Chef
                     </button>
                 </li>
