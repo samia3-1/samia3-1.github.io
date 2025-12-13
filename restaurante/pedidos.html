@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <!-- BOOTSTRAP CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <style>
+        /* Estilos CSS do projeto */
         a {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
@@ -17,8 +19,14 @@
             background-color: rgb(238, 238, 238) !important;
         }
 
-        h2 {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        /* Estilos consolidados para consistência */
+        h2, h3, h4, h5, .form-label {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+        }
+
+        .section-title {
+            color: var(--bs-success);
+            font-weight: bold;
         }
     </style>
 
@@ -28,10 +36,9 @@
 <body>
 
 
-    <!-- ================== NAVBAR ================== -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Broto & Sabor</a>
+            <a class="navbar-brand text-white" href="#">Broto & Sabor</a>
 
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
@@ -41,117 +48,130 @@
 
             <div class="collapse navbar-collapse" id="menuNavbar">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="inicio.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contato.html">Fale Conosco</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pedidos.html">Pedidos Online</a></li>
-                    <li class="nav-item"><a class="nav-link" href="promocoes.html">Promoções</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="inicio.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="cardapio.html">Cardápio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="sobre.html">Sobre Nós</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="reservas.html">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="galeria.html">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contato.html">Fale Conosco</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="pedidos.html">Pedidos Online</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="promocoes.html">Promoções</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
 
-    <!-- ================== 7. PEDIDOS ONLINE / ENTREGA ================== -->
-    <section id="pedidos" class="bg-light py-5">
+    <section id="pedidos" class="mudarCor py-5">
         <div class="container">
-            <h2 class="mb-3">Pedidos Online e Entrega</h2>
-            <p>
-            <section id="pedidos-online" style="font-family: Arial, sans-serif; line-height: 1.6;">
-                <h2>Pedidos Online – Broto & Sabor</h2>
-                <p>Faça seu pedido para <strong>retirada</strong> de forma rápida e prática pelos nossos canais:</p>
+            <h2 class="mb-5 section-title text-center display-5">🛵 Pedidos Online e Entrega</h2>
 
-                <ul>
-                    <li>
-                        <strong>📞 Telefone:</strong>
-                        <a href="tel:+5582987654321">(82) 98765-4321</a>
-                        — Ligue e faça seu pedido diretamente com nossa equipe.
-                    </li>
+            <h3 class="h4 mb-4 section-title text-center">Faça seu pedido para entrega ou retirada!</h3>
 
-                    <li>
-                        <strong>💬 WhatsApp:</strong>
-                        <a href="https://wa.me/5582987654321" target="_blank">Clique aqui para pedir pelo WhatsApp</a>
-                        — Atendimento rápido e confirmação imediata.
-                    </li>
+            <div class="row g-4 mb-5 justify-content-center">
 
-                    <li>
-                        <strong>🛍️ Retirada:</strong>
-                        Disponível na unidade: Rua das Acácias, 128 – Bairro Jatiúca, Maceió – AL.
-                    </li>
-                </ul>
-            </section>
-            </p>
-            <p>
-            <section id="areas-entrega" style="font-family: Arial, sans-serif; line-height: 1.6;">
-                <h2>Áreas de Entrega – Broto & Sabor</h2>
-                <p>Confira os bairros atendidos e o tempo estimado de entrega:</p>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center shadow border-success border-3">
+                        <div class="card-body">
+                            <i class="bi bi-whatsapp display-4 text-success mb-3"></i>
+                            <h4 class="card-title h5 text-success">WhatsApp</h4>
+                            <p class="card-text text-muted">Atendimento rápido e confirmação imediata do seu pedido.</p>
+                            <a href="https://wa.me/5582987654321" target="_blank" class="btn btn-success w-100">
+                                Pedir Agora <i class="bi bi-send-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-                <table border="1" cellpadding="10" cellspacing="0"
-                    style="border-collapse: collapse; width: 100%; text-align: left;">
-                    <thead style="background-color: #a2d39c;">
-                        <tr>
-                            <th>Bairro</th>
-                            <th>Tempo Estimado de Entrega</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Jatiúca</td>
-                            <td>15 – 20 min</td>
-                        </tr>
-                        <tr>
-                            <td>Ponta Verde</td>
-                            <td>20 – 25 min</td>
-                        </tr>
-                        <tr>
-                            <td>Mangabeiras</td>
-                            <td>25 – 30 min</td>
-                        </tr>
-                        <tr>
-                            <td>Farol</td>
-                            <td>30 – 35 min</td>
-                        </tr>
-                        <tr>
-                            <td>Jardim Petrópolis</td>
-                            <td>35 – 40 min</td>
-                        </tr>
-                        <tr>
-                            <td>Gruta de Lourdes</td>
-                            <td>25 – 30 min</td>
-                        </tr>
-                        <tr>
-                            <td>Centro</td>
-                            <td>30 – 35 min</td>
-                        </tr>
-                        <tr>
-                            <td>Tabuleiro do Martins</td>
-                            <td>40 – 45 min</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            </p>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center shadow">
+                        <div class="card-body">
+                            <i class="bi bi-telephone-fill display-4 text-success mb-3"></i>
+                            <h4 class="card-title h5 text-success">Telefone</h4>
+                            <p class="card-text text-muted">Ligue e faça seu pedido diretamente com nossa equipe.</p>
+                            <a href="tel:+5582987654321" class="btn btn-outline-success w-100">
+                                (82) 98765-4321
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 text-center shadow">
+                        <div class="card-body">
+                            <i class="bi bi-shop display-4 text-success mb-3"></i>
+                            <h4 class="card-title h5 text-success">Retirada na Loja</h4>
+                            <p class="card-text text-muted">Você pode retirar seu pedido diretamente em nossa unidade:</p>
+                            <p class="mb-0 text-success fw-bold">Rua das Acácias, 128 – Jatiúca</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <h3 class="h4 mb-4 section-title text-center">🗺️ Áreas de Entrega e Prazo Estimado</h3>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <table class="table table-striped table-hover table-bordered shadow-sm">
+                        <thead class="table-success text-white">
+                            <tr>
+                                <th scope="col">Bairro</th>
+                                <th scope="col" class="text-center">Tempo Estimado de Entrega</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jatiúca</td>
+                                <td class="text-center">15 – 20 min</td>
+                            </tr>
+                            <tr>
+                                <td>Ponta Verde</td>
+                                <td class="text-center">20 – 25 min</td>
+                            </tr>
+                            <tr>
+                                <td>Mangabeiras</td>
+                                <td class="text-center">25 – 30 min</td>
+                            </tr>
+                            <tr>
+                                <td>Farol</td>
+                                <td class="text-center">30 – 35 min</td>
+                            </tr>
+                            <tr>
+                                <td>Gruta de Lourdes</td>
+                                <td class="text-center">25 – 30 min</td>
+                            </tr>
+                            <tr>
+                                <td>Centro</td>
+                                <td class="text-center">30 – 35 min</td>
+                            </tr>
+                            <tr>
+                                <td>Jardim Petrópolis</td>
+                                <td class="text-center">35 – 40 min</td>
+                            </tr>
+                            <tr>
+                                <td>Tabuleiro do Martins</td>
+                                <td class="text-center">40 – 45 min</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="mt-3 text-center text-muted"><small>Os tempos de entrega são estimados e podem variar em horários de pico ou condições de trânsito.</small></p>
+                </div>
+            </div>
+
         </div>
     </section>
 
 
 
-    <!-- ================== FOOTER ================== -->
     <footer class="bg-success text-white text-center py-3">
         <small>© 2025 Broto & Sabor - Todos os direitos reservados.</small>
     </footer>
 
 
-    <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
-</body>
-
-</html>
-
 </body>
 
 </html>
