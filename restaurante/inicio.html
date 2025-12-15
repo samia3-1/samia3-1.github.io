@@ -102,6 +102,144 @@ tbody tr:hover {
     border-bottom: 3px solid var(--bs-warning) !important;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
+        /*
+ * O código abaixo contém todas as regras CSS originais
+ * mais as adições para a responsividade, focadas nas suas solicitações.
+ */
+body,
+a,
+p,
+h1,
+h2,
+h3,
+label,
+table {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+}
+
+h1,
+h2 {
+    color: var(--bs-success);
+}
+
+/* --- ESTILOS GERAIS PARA O CARROSSEL E TABELA (Móvel/Padrão) --- */
+
+.carousel-item img {
+    height: 300px; /* Mantém menor em telas pequenas */
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.content-verde-suave {
+    background-color: var(--bs-success-bg-subtle) !important;
+}
+
+.content-branco {
+    background-color: white !important;
+}
+
+table {
+    border-collapse: collapse;
+    width: 95%; /* Continua com 95% em mobile */
+    max-width: 850px; /* NOVO: Limite de largura máxima da tabela em qualquer tela */
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+thead th {
+    background-color: #a7d887;
+    color: #333333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #d1d1d1;
+}
+
+tbody tr:hover {
+    background-color: #c5ddba;
+    cursor: default;
+}
+
+/* Estilos de Navegação (mantidos conforme sua preferência) */
+.nav-link {
+    background-color: var(--bs-success);
+    color: white !important;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+    border-radius: 5px 5px 0 0;
+    border: none;
+}
+
+.nav-link.active {
+    background-color: white !important;
+    color: var(--bs-success) !important;
+    border-bottom: 3px solid var(--bs-warning) !important;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* --- MEDIA QUERY PARA DESKTOP (min-width: 992px) --- */
+@media (min-width: 992px) {
+    
+    /* 1. DIMINUIR TAMANHO DO CARROSSEL EM DESKTOP (Menos alto e menos achatado) */
+    .carousel-item img {
+        height: 350px; /* Reduz de 400px (original) para 350px em desktops */
+        max-width: 100%; /* Garantir que o object-fit funcione bem */
+        border-radius: 20px;
+    }
+    
+    /* 2. DIMINUIR LARGURA DA TABELA EM DESKTOP */
+    table {
+        width: 70%; /* Reduzindo a largura da tabela para 70% da área do container */
+        /* O max-width: 850px (acima) garantirá que ela não fique muito grande */
+    }
+    
+    /* 3. TEXTOS MAIS JUNTINHOS (Ajustando a margem inferior) */
+    /* Removendo a margem inferior do segundo parágrafo */
+    #inicio-content .mb-5 {
+        margin-bottom: 2rem !important; /* Deixa menos espaço (era 3rem por causa do mb-5) */
+    }
+    
+    /* Adicionando um pouco menos de espaçamento entre as linhas do texto principal */
+    #inicio-content p {
+        line-height: 1.6; /* Reduz o espaçamento entre linhas (padrão 1.5, aumentei um pouco o padrão) */
+    }
+    
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE EM TELAS MUITO PEQUENAS (Mobile) --- */
+@media (max-width: 576px) {
+    
+    /* Aumenta o padding da célula da tabela para telas muito estreitas */
+    th, td {
+        padding: 8px 10px; 
+    }
+    
+    /* Reduz um pouco o tamanho do texto da tabela para caber melhor */
+    thead th, tbody td {
+        font-size: 0.9em;
+    }
+
+    /* Reduz o espaçamento vertical entre as seções em mobile */
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
     </style>
 
     <title>Restaurante - Broto & Sabor</title>
