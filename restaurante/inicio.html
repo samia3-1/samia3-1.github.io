@@ -102,68 +102,6 @@ tbody tr:hover {
     border-bottom: 3px solid var(--bs-warning) !important;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
-
-/* --- MEDIA QUERIES PARA RESPONSIVIDADE EM TELAS GRANDES (Desktop) --- */
-@media (min-width: 992px) {
-    /* Ajusta o padding do container para não achatar demais o texto */
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    
-    /* Aumenta um pouco o tamanho da fonte dos títulos */
-    h1 {
-        font-size: 2.5rem; /* Revertendo para o tamanho padrão do display-5 ou similar */
-    }
-
-    /* Aumenta a altura da imagem do Carrossel em telas grandes */
-    .carousel-item img {
-        height: 450px;
-        border-radius: 30px; /* Um pouco mais de arredondamento */
-    }
-
-    /* Redefine a largura da tabela em telas maiores para um valor ideal */
-    table {
-        width: 80%; /* Voltando ao 80% original, mas agora com max-width global */
-    }
-    
-    /* Melhora a visualização da Navbar em desktops */
-    .navbar-brand {
-        font-size: 1.5rem;
-    }
-    
-    /* Adiciona mais espaçamento entre os links de navegação em desktops */
-    .navbar-nav .nav-item {
-        margin: 0 10px;
-    }
-
-    /* Garante que o texto de introdução tenha uma boa leitura */
-    #inicio-content p {
-        font-size: 1.15rem;
-        line-height: 1.8;
-    }
-}
-
-
-/* --- MEDIA QUERIES PARA RESPONSIVIDADE EM TELAS MUITO PEQUENAS (Mobile) --- */
-@media (max-width: 576px) {
-    
-    /* Aumenta o padding da célula da tabela para telas muito estreitas */
-    th, td {
-        padding: 8px 10px; 
-    }
-    
-    /* Reduz um pouco o tamanho do texto da tabela para caber melhor */
-    thead th, tbody td {
-        font-size: 0.9em;
-    }
-
-    /* Reduz o espaçamento vertical entre as seções em mobile */
-    .py-5 {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-    }
-}
     </style>
 
     <title>Restaurante - Broto & Sabor</title>
