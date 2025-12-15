@@ -55,6 +55,23 @@
         .rating-stars {
             color: gold;
         }
+        .nav-link {
+            background-color: var(--bs-success); /* Fundo verde para todos */
+            color: white !important; /* Texto BRANCO para ser visível em todos */
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 0 5px; /* Espaçamento entre os botões */
+            border-radius: 5px 5px 0 0; /* Bordas arredondadas no topo */
+            border: none;
+        }
+
+        /* Estilo para o link ATIVO (o que está sendo visualizado) */
+        .nav-link.active {
+            background-color: white !important; /* Fundo branco para destacar */
+            color: var(--bs-success) !important; /* Texto verde sobre o fundo branco */
+            border-bottom: 3px solid var(--bs-warning) !important; /* Linha de destaque amarela */
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Sombra suave para levantar a aba */
+        }
     </style>
 
     <title>Restaurante - Broto & Sabor</title>
