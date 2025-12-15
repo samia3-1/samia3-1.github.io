@@ -9,92 +9,161 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* Manter a fonte "Lucida Sans" para todos os textos, conforme a imagem */
-        body,
-        a,
-        p,
-        h1,
-        h2,
-        h3,
-        label,
-        table {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
-        }
+       /*
+ * O código abaixo contém todas as regras CSS originais
+ * mais as adições para a responsividade.
+ */
+body,
+a,
+p,
+h1,
+h2,
+h3,
+label,
+table {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+}
 
-        /* Os títulos agora usam a cor 'success' do Bootstrap */
-        h1,
-        h2 {
-            color: var(--bs-success);
-        }
+h1,
+h2 {
+    color: var(--bs-success);
+}
 
-        /* Estilo da imagem do Carrossel (Arredondado, como estava originalmente) */
-        .carousel-item img {
-            height: 400px;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 20px; /* Arredondamento reintroduzido */
-        }
+/* --- ESTILOS RESPONSIVOS E GERAIS --- */
 
-        /* Estilo da área de Conteúdo Principal (Texto e Carrossel) - Fundo Verde Suave */
-        .content-verde-suave {
-            background-color: var(--bs-success-bg-subtle) !important;
-        }
+/* Estilo da imagem do Carrossel (Arredondado) */
+.carousel-item img {
+    height: 300px; /* Reduzindo um pouco a altura em telas menores para não ocupar tanto espaço */
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
 
-        /* Estilo da área da Tabela (Fundo Branco) */
-        .content-branco {
-            background-color: white !important;
-        }
+/* Estilo da área de Conteúdo Principal (Texto e Carrossel) - Fundo Verde Suave */
+.content-verde-suave {
+    background-color: var(--bs-success-bg-subtle) !important;
+}
 
-        /* Estilo da Tabela (Mantido o design customizado original) */
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 20px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
+/* Estilo da área da Tabela (Fundo Branco) */
+.content-branco {
+    background-color: white !important;
+}
 
-        th,
-        td {
-            border: 1px solid #dddddd;
-            padding: 12px 15px;
-            text-align: center;
-        }
+/* Estilo da Tabela (Mantido o design customizado original) */
+table {
+    border-collapse: collapse;
+    width: 95%; /* Aumenta um pouco a largura em telas menores para melhor aproveitamento */
+    max-width: 1000px; /* **NOVO**: Limite o tamanho máximo da tabela para não ficar muito larga em desktops */
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
 
-        thead th {
-            background-color: #a7d887;
-            color: #333333;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1.1em;
-        }
+th,
+td {
+    border: 1px solid #dddddd;
+    padding: 12px 15px;
+    text-align: center;
+}
 
-        tbody tr:nth-child(even) {
-            background-color: #d1d1d1;
-        }
+thead th {
+    background-color: #a7d887;
+    color: #333333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.1em;
+}
 
-        tbody tr:hover {
-            background-color: #c5ddba;
-            cursor: default;
-        }
-         .nav-link {
-            background-color: var(--bs-success); /* Fundo verde para todos */
-            color: white !important; /* Texto BRANCO para ser visível em todos */
-            font-weight: bold;
-            transition: all 0.3s ease;
-            margin: 0 5px; /* Espaçamento entre os botões */
-            border-radius: 5px 5px 0 0; /* Bordas arredondadas no topo */
-            border: none;
-        }
+tbody tr:nth-child(even) {
+    background-color: #d1d1d1;
+}
 
-        /* Estilo para o link ATIVO (o que está sendo visualizado) */
-        .nav-link.active {
-            background-color: white !important; /* Fundo branco para destacar */
-            color: var(--bs-success) !important; /* Texto verde sobre o fundo branco */
-            border-bottom: 3px solid var(--bs-warning) !important; /* Linha de destaque amarela */
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Sombra suave para levantar a aba */
-        }
+tbody tr:hover {
+    background-color: #c5ddba;
+    cursor: default;
+}
+
+/* Estilos de Navegação (mantidos) */
+.nav-link {
+    background-color: var(--bs-success);
+    color: white !important;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+    border-radius: 5px 5px 0 0;
+    border: none;
+    text-align: center; /* Centraliza o texto nos botões */
+}
+
+.nav-link.active {
+    background-color: white !important;
+    color: var(--bs-success) !important;
+    border-bottom: 3px solid var(--bs-warning) !important;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE EM TELAS GRANDES (Desktop) --- */
+@media (min-width: 992px) {
+    /* Ajusta o padding do container para não achatar demais o texto */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Aumenta um pouco o tamanho da fonte dos títulos */
+    h1 {
+        font-size: 2.5rem; /* Revertendo para o tamanho padrão do display-5 ou similar */
+    }
+
+    /* Aumenta a altura da imagem do Carrossel em telas grandes */
+    .carousel-item img {
+        height: 450px;
+        border-radius: 30px; /* Um pouco mais de arredondamento */
+    }
+
+    /* Redefine a largura da tabela em telas maiores para um valor ideal */
+    table {
+        width: 80%; /* Voltando ao 80% original, mas agora com max-width global */
+    }
+    
+    /* Melhora a visualização da Navbar em desktops */
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    /* Adiciona mais espaçamento entre os links de navegação em desktops */
+    .navbar-nav .nav-item {
+        margin: 0 10px;
+    }
+
+    /* Garante que o texto de introdução tenha uma boa leitura */
+    #inicio-content p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+    }
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE EM TELAS MUITO PEQUENAS (Mobile) --- */
+@media (max-width: 576px) {
+    
+    /* Aumenta o padding da célula da tabela para telas muito estreitas */
+    th, td {
+        padding: 8px 10px; 
+    }
+    
+    /* Reduz um pouco o tamanho do texto da tabela para caber melhor */
+    thead th, tbody td {
+        font-size: 0.9em;
+    }
+
+    /* Reduz o espaçamento vertical entre as seções em mobile */
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
     </style>
 
     <title>Restaurante - Broto & Sabor</title>
