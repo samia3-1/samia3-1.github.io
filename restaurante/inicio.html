@@ -33,10 +33,9 @@ h2 {
 
 /* Estilo da imagem do Carrossel (Arredondado) */
 .carousel-item img {
-    height: 400px; /* Reduzindo um pouco a altura em telas menores para não ocupar tanto espaço */
+    height: 400px;
     width: 80%;
     object-fit: cover;
-    border-radius: 20px;
 }
 
 /* Estilo da área de Conteúdo Principal (Texto e Carrossel) - Fundo Verde Suave */
@@ -196,9 +195,8 @@ tbody tr:hover {
     
     /* 1. DIMINUIR TAMANHO DO CARROSSEL EM DESKTOP (Menos alto e menos achatado) */
     .carousel-item img {
-        height: 350px; /* Reduz de 400px (original) para 350px em desktops */
-        max-width: 100%; /* Garantir que o object-fit funcione bem */
-        border-radius: 20px;
+        height: 100%; /* Reduz de 400px (original) para 350px em desktops */
+        max-width: 50%; /* Garantir que o object-fit funcione bem */
     }
     
     /* 2. DIMINUIR LARGURA DA TABELA EM DESKTOP */
@@ -325,7 +323,7 @@ tbody tr:hover {
             
             <div class="row mt-5">
                 <div class="col-12">
-                    <h2 class="h3 text-center text-success mb-4">⏰ Horário de Funcionamento</h2>
+                    <h2 class="h3 text-center text-success mb-4">Horário de Funcionamento</h2>
                 </div>
             </div>
 
