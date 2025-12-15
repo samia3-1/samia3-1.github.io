@@ -7,140 +7,146 @@
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 
     <style>
-      <style>
-/*
- * O código abaixo contém todas as regras CSS e ajustes de responsividade.
- */
-body,
-a,
-p,
-h1,
+        :root {
+            --bs-success: #198754;
+            --bs-warning: #ffc107;
+            /* CORES DA TABELA IGUAL À FOTO */
+            --cor-verde-clara: #e9f5e9; 
+            --cor-verde-fundo-par: #d1e4d1; 
+        }
+
+        body,
+        a,
+        p,
+        h1,
         li,
-h2,
-h3,
-label,
-table {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
-}
+        h2,
+        h3,
+        label,
+        table {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+        }
 
-h1,
-h2 {
-    color: var(--bs-success);
-}
+        h1,
+        h2 {
+            color: var(--bs-success);
+        }
 
-/* --- ESTILOS GERAIS PARA O CARROSSEL E TABELA (Móvel/Padrão) --- */
+        /* --- ESTILOS GERAIS PARA CARROSSEL E TABELA --- */
 
-.carousel-item img {
-    height: 300px; /* Mantém menor em telas pequenas */
-    width: 100%; /* Garante que a imagem preencha o container */
-    object-fit: cover;
-    border-radius: 20px;
-}
+        .carousel-item img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
 
-.content-verde-suave {
-    background-color: var(--bs-success-bg-subtle) !important;
-}
+        .content-verde-suave {
+            background-color: var(--bs-success-bg-subtle) !important;
+        }
 
-.content-branco {
-    background-color: white !important;
-}
+        .content-branco {
+            background-color: white !important;
+        }
 
-table {
-    border-collapse: collapse;
-    width: 95%; /* Continua com 95% em mobile */
-    max-width: 850px; /* Limite de largura máxima da tabela em qualquer tela */
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
+        table {
+            border-collapse: collapse;
+            width: 95%;
+            max-width: 850px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
 
-th,
-td {
-    border: 1px solid #dddddd;
-    padding: 12px 15px;
-    text-align: center;
-}
+        th,
+        td {
+            border: 1px solid #dddddd;
+            padding: 12px 15px;
+            text-align: center;
+        }
 
-thead th {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1.1em;
-}
+        /* 1. CABEÇALHO DA TABELA (Estilo da Foto) */
+        thead th {
+            background-color: var(--cor-verde-clara); /* Verde claro do fundo do print */
+            color: var(--bs-success); /* Texto em verde escuro */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.1em;
+            font-weight: bold; 
+        }
 
-tbody tr:nth-child(even) {
-    background-color: #d1d1d1;
-}
+        /* 2. COR DE FUNDO DAS LINHAS PARES (Estilo da Foto) */
+        tbody tr:nth-child(even) {
+            background-color: var(--cor-verde-fundo-par); /* Verde um pouco mais escuro */
+        }
 
-tbody tr:hover {
-    background-color: #c5ddba;
-    cursor: default;
-}
+        tbody tr:hover {
+            background-color: #c5ddba;
+            cursor: default;
+        }
 
-/* Estilos de Navegação (mantidos conforme sua preferência) */
-.nav-link {
-    background-color: var(--bs-success);
-    color: white !important;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    margin: 0 5px;
-    border-radius: 5px 5px 0 0;
-    border: none;
-}
+        /* Estilos de Navegação (mantidos) */
+        .nav-link {
+            background-color: var(--bs-success);
+            color: white !important;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+            border-radius: 5px 5px 0 0;
+            border: none;
+        }
 
-.nav-link.active {
-    background-color: white !important;
-    color: var(--bs-success) !important;
-    border-bottom: 3px solid var(--bs-warning) !important;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
+        .nav-link.active {
+            background-color: white !important;
+            color: var(--bs-success) !important;
+            border-bottom: 3px solid var(--bs-warning) !important;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-/* --- MEDIA QUERY PARA DESKTOP (min-width: 992px) --- */
-@media (min-width: 992px) {
-    
-    /* CORREÇÃO DO CARROSSEL EM COLUNA (Desktop) */
-    .carousel-item img {
-        /* Garantindo que o carrossel ocupe a largura total da coluna (50% da tela) */
-        width: 100%;
-        /* Definindo uma altura fixa e adequada para telas grandes */
-        height: 400px; 
-    }
-    
-    /* AJUSTE NA TABELA E TEXTO (Mantidos) */
-    table {
-        width: 70%; 
-    }
-    
-    #inicio-content .mb-5 {
-        margin-bottom: 1rem !important; 
-    }
-    
-    #inicio-content p {
-        line-height: 1.6;
-    }
-    
-}
+        /* --- MEDIA QUERY PARA DESKTOP (min-width: 992px) --- */
+        @media (min-width: 992px) {
+            
+            .carousel-item img {
+                width: 100%;
+                height: 400px;
+            }
+            
+            table {
+                width: 70%;
+            }
+            
+            #inicio-content .mb-5 {
+                margin-bottom: 1rem !important;
+            }
+            
+            #inicio-content p {
+                line-height: 1.6;
+            }
+            
+        }
 
 
-/* --- MEDIA QUERIES PARA RESPONSIVIDADE EM TELAS MUITO PEQUENAS (Mobile) --- */
-@media (max-width: 576px) {
-    
-    th, td {
-        padding: 8px 10px; 
-    }
-    
-    thead th, tbody td {
-        font-size: 0.9em;
-    }
+        /* --- MEDIA QUERIES PARA RESPONSIVIDADE EM TELAS MUITO PEQUENAS (Mobile) --- */
+        @media (max-width: 576px) {
+            
+            th, td {
+                padding: 8px 10px;
+            }
+            
+            thead th, tbody td {
+                font-size: 0.9em;
+            }
 
-    .py-5 {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-    }
-}
-</style>
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+        }
     </style>
 
     <title>Restaurante - Broto & Sabor</title>
